@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire Exhaustive de la Pologne</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Cinzel:wght@400;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --crimson: #9B1B30;
+  --deep: #1A0A0A;
+  --parchment: #F4EDD8;
+  --gold: #B8860B;
+  --gold-light: #D4A843;
+  --ink: #2A1A0A;
+  --cream: #FAF6EC;
+  --silver: #8B8680;
+  --border: rgba(184,134,11,0.25);
+  --glow: rgba(212,168,67,0.15);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  color: var(--parchment);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--deep); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(155,27,48,0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 100%, rgba(184,134,11,0.1) 0%, transparent 60%),
+    var(--deep);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0px, transparent 59px, rgba(184,134,11,0.04) 59px, rgba(184,134,11,0.04) 60px),
+    repeating-linear-gradient(90deg, transparent 0px, transparent 59px, rgba(184,134,11,0.04) 59px, rgba(184,134,11,0.04) 60px);
+  pointer-events: none;
+}
+
+.hero-flag {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 68px;
+  border: 2px solid var(--gold);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 0 40px rgba(155,27,48,0.4);
+  animation: flagPulse 3s ease-in-out infinite;
+}
+.flag-white { flex: 1; background: #F5F0E8; }
+.flag-red { flex: 1; background: #C0392B; }
+
+@keyframes flagPulse {
+  0%,100% { box-shadow: 0 0 30px rgba(155,27,48,0.3); }
+  50% { box-shadow: 0 0 60px rgba(155,27,48,0.6); }
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--parchment);
+  text-shadow: 0 0 80px rgba(155,27,48,0.5);
+  margin-bottom: 8px;
+}
+
+.hero h1 em {
+  color: var(--gold-light);
+  font-style: normal;
+  display: block;
+  font-size: 0.55em;
+  letter-spacing: 0.2em;
+  margin-top: 10px;
+}
+
+.hero-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: rgba(244,237,216,0.65);
+  margin: 28px 0 50px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+.toc {
+  background: rgba(26,10,10,0.8);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 32px 40px;
+  max-width: 800px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.toc h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  text-decoration: none;
+  color: rgba(244,237,216,0.7);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+.toc-item:hover {
+  border-color: var(--border);
+  color: var(--gold-light);
+  background: var(--glow);
+}
+.toc-num {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  color: var(--gold);
+  opacity: 0.6;
+  min-width: 24px;
+}
+
+/* ── LAYOUT ── */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+
+/* ── EPOCH ── */
+.epoch {
+  padding: 100px 0 60px;
+  position: relative;
+}
+
+.epoch::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: 0.3;
+}
+
+.epoch-banner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.epoch-roman {
+  font-family: 'Cinzel', serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(155,27,48,0.15);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  min-width: 100px;
+  text-align: right;
+}
+
+.epoch-info h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--parchment);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.epoch-dates {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--gold-light);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(184,134,11,0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--crimson);
+  flex-shrink: 0;
+}
+
+/* ── PROSE ── */
+.prose p {
+  color: rgba(244,237,216,0.88);
+  margin-bottom: 16px;
+  text-align: justify;
+}
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--parchment); font-weight: 600; }
+.prose em { color: var(--gold-light); font-style: italic; }
+
+/* ── HIGHLIGHT BOX ── */
+.highlight {
+  background: rgba(155,27,48,0.08);
+  border: 1px solid rgba(155,27,48,0.25);
+  border-left: 3px solid var(--crimson);
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-radius: 0 2px 2px 0;
+}
+
+.highlight.gold {
+  background: rgba(184,134,11,0.06);
+  border-color: rgba(184,134,11,0.25);
+  border-left-color: var(--gold);
+}
+
+.highlight h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.highlight p {
+  font-size: 0.95rem;
+  color: rgba(244,237,216,0.8);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* ── QUOTE ── */
+.blockquote {
+  margin: 32px 0;
+  padding: 28px 40px 28px 60px;
+  position: relative;
+  background: rgba(184,134,11,0.04);
+  border-left: 2px solid var(--gold);
+}
+.blockquote::before {
+  content: '\201C';
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  color: var(--gold);
+  opacity: 0.25;
+  line-height: 1;
+}
+.blockquote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: rgba(244,237,216,0.85);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.blockquote cite {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.82rem;
+  color: var(--gold);
+  opacity: 0.7;
+  letter-spacing: 0.06em;
+}
+
+/* ── PERSONS ── */
+.persons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.person-card {
+  background: rgba(26,10,10,0.5);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.person-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(184,134,11,0.15);
+}
+
+.person-portrait {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  background: rgba(184,134,11,0.05);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.person-portrait-placeholder {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184,134,11,0.05);
+  border-bottom: 1px solid var(--border);
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: rgba(184,134,11,0.2);
+}
+
+.person-body { padding: 16px 18px; }
+
+.person-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--parchment);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.person-dates {
+  font-size: 0.75rem;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+.person-desc {
+  font-size: 0.88rem;
+  color: rgba(244,237,216,0.65);
+  line-height: 1.5;
+}
+
+.person-wiki {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--gold);
+  opacity: 0.6;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.person-wiki:hover { opacity: 1; }
+
+/* ── MAP LINK ── */
+.map-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(184,134,11,0.06);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  margin: 20px 0;
+  text-decoration: none;
+  color: var(--parchment);
+  transition: all 0.2s;
+}
+.map-link:hover {
+  background: rgba(184,134,11,0.12);
+  border-color: var(--gold);
+}
+.map-link-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.map-link-text { flex: 1; }
+.map-link-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 3px;
+}
+.map-link-url {
+  font-size: 0.78rem;
+  color: rgba(244,237,216,0.45);
+  font-family: monospace;
+}
+.map-link-arrow {
+  font-size: 1.2rem;
+  color: var(--gold);
+  opacity: 0.5;
+}
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 36px; margin: 28px 0; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--crimson), var(--gold), transparent);
+  opacity: 0.4;
+}
+.tl-item { position: relative; margin-bottom: 24px; }
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 5px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--crimson);
+  border: 2px solid var(--gold-light);
+  box-shadow: 0 0 6px rgba(155,27,48,0.5);
+}
+.tl-year {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 3px;
+}
+.tl-text {
+  font-size: 0.92rem;
+  color: rgba(244,237,216,0.78);
+  line-height: 1.55;
+}
+
+/* ── STATS BAR ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+.stat-box {
+  border: 1px solid var(--border);
+  padding: 16px;
+  text-align: center;
+  background: rgba(26,10,10,0.3);
+}
+.stat-num {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--crimson);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 0.78rem;
+  color: rgba(244,237,216,0.5);
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+/* ── DIVIDER ── */
+.epoch-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 80px 0;
+  padding: 0 28px;
+}
+.epoch-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+.epoch-divider-ornament {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  opacity: 0.3;
+}
+
+/* ── QUIZ ── */
+.quiz-section {
+  background: rgba(155,27,48,0.04);
+  border: 1px solid rgba(155,27,48,0.2);
+  border-radius: 4px;
+  padding: 40px;
+  margin: 60px 0;
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.quiz-icon {
+  width: 44px; height: 44px;
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  color: var(--crimson);
+  flex-shrink: 0;
+}
+
+.quiz-header h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--parchment);
+}
+
+.quiz-header span {
+  font-size: 0.8rem;
+  color: rgba(244,237,216,0.45);
+  display: block;
+  margin-top: 2px;
+}
+
+.quiz-progress {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--crimson), var(--gold));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0;
+}
+
+.q-card {
+  display: none;
+  animation: qIn 0.3s ease;
+}
+.q-card.active { display: block; }
+
+@keyframes qIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+.q-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.q-counter {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  color: var(--gold);
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+}
+.q-cat {
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border: 1px solid rgba(155,27,48,0.4);
+  border-radius: 20px;
+  color: rgba(155,27,48,0.8);
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.08em;
+}
+
+.q-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--parchment);
+  line-height: 1.4;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.q-options { display: grid; gap: 8px; margin-bottom: 20px; }
+
+.q-opt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  background: rgba(26,10,10,0.4);
+  border: 1px solid rgba(184,134,11,0.12);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  color: rgba(244,237,216,0.78);
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.95rem;
+  width: 100%;
+}
+.q-opt:hover:not(:disabled) {
+  background: rgba(184,134,11,0.08);
+  border-color: rgba(184,134,11,0.3);
+  color: var(--parchment);
+  transform: translateX(3px);
+}
+.q-opt.ok { background: rgba(39,174,96,0.1)!important; border-color: rgba(39,174,96,0.4)!important; color:#6fcf97!important; }
+.q-opt.no { background: rgba(155,27,48,0.1)!important; border-color: rgba(155,27,48,0.4)!important; color:rgba(155,27,48,0.9)!important; }
+.q-opt:disabled { cursor:default; transform:none!important; }
+
+.q-letter {
+  width:26px; height:26px;
+  border-radius:50%;
+  border: 1px solid rgba(184,134,11,0.2);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cinzel',serif;
+  font-size:0.7rem;
+  color:var(--gold);
+  flex-shrink:0;
+}
+
+.q-explain {
+  display:none;
+  background: rgba(184,134,11,0.06);
+  border:1px solid rgba(184,134,11,0.2);
+  padding:14px 18px;
+  margin-top:12px;
+  font-size:0.88rem;
+  color:rgba(244,237,216,0.75);
+  line-height:1.55;
+  border-radius:2px;
+}
+.q-explain.show { display:block; }
+
+.q-nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid rgba(184,134,11,0.1);
+}
+
+.btn {
+  padding: 10px 28px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+.btn-primary {
+  background: var(--crimson);
+  color: var(--parchment);
+}
+.btn-primary:hover { background: #7A1525; transform:translateY(-1px); }
+.btn-primary:disabled { opacity:0.3; cursor:default; transform:none; }
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(184,134,11,0.25);
+  color: rgba(244,237,216,0.6);
+}
+.btn-ghost:hover { border-color:var(--gold); color:var(--gold-light); }
+.btn-ghost:disabled { opacity:0.3; cursor:default; }
+
+.score-screen {
+  display:none;
+  text-align:center;
+  padding: 40px 20px;
+  animation: qIn 0.4s ease;
+}
+.score-ring {
+  width:140px; height:140px;
+  border-radius:50%;
+  border:3px solid var(--gold);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  margin: 28px auto;
+  background: radial-gradient(circle, rgba(184,134,11,0.08), transparent);
+}
+.score-n {
+  font-family:'Cinzel',serif;
+  font-size:2.8rem;
+  font-weight:700;
+  color:var(--gold-light);
+  line-height:1;
+}
+.score-d {
+  font-size:0.85rem;
+  color:rgba(244,237,216,0.45);
+  margin-top:4px;
+}
+.score-msg {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.2rem;
+  color:rgba(244,237,216,0.75);
+  max-width:420px;
+  margin: 12px auto 28px;
+  line-height:1.5;
+}
+.score-title {
+  font-family:'Cinzel',serif;
+  font-size:0.85rem;
+  letter-spacing:0.15em;
+  color:var(--parchment);
+  margin-bottom:8px;
+}
+
+/* ── GLOBAL NAV ── */
+#global-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(26,10,10,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  gap: 20px;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+#global-nav.visible { transform: translateY(0); }
+.nav-logo {
+  font-family:'Cinzel',serif;
+  font-size:0.75rem;
+  letter-spacing:0.2em;
+  color:var(--gold);
+  text-decoration:none;
+  flex-shrink:0;
+}
+.nav-links {
+  display:flex;
+  gap:4px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav-links::-webkit-scrollbar { display:none; }
+.nav-link {
+  font-family:'Cinzel',serif;
+  font-size:0.65rem;
+  letter-spacing:0.1em;
+  color:rgba(244,237,216,0.5);
+  text-decoration:none;
+  padding:4px 10px;
+  border-radius:2px;
+  white-space:nowrap;
+  transition:all 0.2s;
+}
+.nav-link:hover { color:var(--gold-light); background:var(--glow); }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(16px); transition:opacity 0.5s ease, transform 0.5s ease; }
+.reveal.in { opacity:1; transform:translateY(0); }
+
+/* ── FOOTER ── */
+footer {
+  text-align:center;
+  padding:60px 28px;
+  border-top:1px solid var(--border);
+  color:rgba(244,237,216,0.25);
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+}
+
+@media(max-width:600px){
+  .epoch-banner{flex-direction:column;align-items:flex-start;gap:8px}
+  .epoch-roman{font-size:3rem;min-width:auto;text-align:left}
+  .persons-grid{grid-template-columns:1fr 1fr}
+  .quiz-section{padding:24px 16px}
+}
+</style>
+</head>
+<body>
+
+<nav id="global-nav">
+  <a class="nav-logo" href="#top">POLOGNE</a>
+  <div class="nav-links">
+    <a class="nav-link" href="#ep1">I. Origines</a>
+    <a class="nav-link" href="#ep2">II. Piasts</a>
+    <a class="nav-link" href="#ep3">III. Jagellon</a>
+    <a class="nav-link" href="#ep4">IV. République</a>
+    <a class="nav-link" href="#ep5">V. Partages</a>
+    <a class="nav-link" href="#ep6">VI. Indépendance</a>
+    <a class="nav-link" href="#ep7">VII. WWII</a>
+    <a class="nav-link" href="#ep8">VIII. Communisme</a>
+    <a class="nav-link" href="#ep9">IX. Démocratie</a>
+    <a class="nav-link" href="#quiz-global">Quiz Global</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="hero-flag"><div class="flag-white"></div><div class="flag-red"></div></div>
+  <p class="hero-eyebrow">Guide historique exhaustif</p>
+  <h1>Histoire de la <em>Pologne</em></h1>
+  <p class="hero-desc">Du VIe siècle à nos jours — guerres, alliances, partages, résurrections. L'histoire d'un peuple forgé par l'adversité.</p>
+  <div class="toc">
+    <h2>Table des matières</h2>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ep1"><span class="toc-num">I</span>Les origines slaves</a>
+      <a class="toc-item" href="#ep2"><span class="toc-num">II</span>La dynastie des Piasts</a>
+      <a class="toc-item" href="#ep3"><span class="toc-num">III</span>Les Jagellon</a>
+      <a class="toc-item" href="#ep4"><span class="toc-num">IV</span>La République nobiliaire</a>
+      <a class="toc-item" href="#ep5"><span class="toc-num">V</span>Les partages (1772–1795)</a>
+      <a class="toc-item" href="#ep6"><span class="toc-num">VI</span>L'indépendance (1918–1939)</a>
+      <a class="toc-item" href="#ep7"><span class="toc-num">VII</span>La Seconde Guerre mondiale</a>
+      <a class="toc-item" href="#ep8"><span class="toc-num">VIII</span>La République communiste</a>
+      <a class="toc-item" href="#ep9"><span class="toc-num">IX</span>La démocratie moderne</a>
+      <a class="toc-item" href="#quiz-global"><span class="toc-num">★</span>Quiz global</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     ÉPOQUE I — LES ORIGINES SLAVES
+═══════════════════════════════════════════════════════ -->
+<section id="ep1" class="epoch">
+<div class="container">
+
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">I</div>
+    <div class="epoch-info">
+      <h2>Les origines slaves et la naissance de l'État</h2>
+      <span class="epoch-dates">VIe siècle – 992 apr. J.-C.</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Les grandes migrations slaves (Ve–VIIe siècle)</h3>
+    <div class="prose">
+      <p>Les peuples slaves apparaissent dans les sources écrites au VIe siècle, lorsque Jordanès et Procope de Césarée les mentionnent pour la première fois. Issus d'une région originelle encore débattue — probablement les marais de la Polésie (Ukraine-Biélorussie actuelles) — ils se répandent massivement vers l'ouest, le nord et le sud lors des <strong>grandes migrations</strong> qui suivent la dislocation de l'Empire hun après la mort d'Attila (453).</p>
+      <p>Les Slaves occidentaux qui colonisent les terres entre la Vistule et l'Oder se fragmentent en de nombreuses tribus : Mazures, Silésiates, Kuyaves, Poméraniens, Lentiens et <strong>Polanes</strong>. Ces derniers, installés en Grande-Pologne autour du bassin de la Warta, practiquent une agriculture avancée et construisent des fortifications en bois et en terre (<em>grody</em> en polonais) qui deviendront les noyaux des futures villes.</p>
+      <p>La religion de ces peuples est polythéiste : ils vénèrent <strong>Perun</strong> (dieu du tonnerre et des guerriers), <strong>Świętowit</strong> (dieu de la guerre et de la fertilité, dont le grand sanctuaire de Szczecin sera actif jusqu'au XIIe siècle), <strong>Veles</strong> (dieu des morts et des troupeaux) et de nombreuses divinités locales. Les prêtres (<em>żercy</em>) jouent un rôle politique crucial, et la conversion future au christianisme brisera cet équilibre.</p>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">La tribu des Polanes et la maison des Piasts</h3>
+    <div class="prose">
+      <p>La <strong>légende des Piasts</strong>, consignée par le chroniqueur Gallus Anonymus vers 1115, raconte qu'un modeste charron nommé <strong>Piast</strong>, dont l'hospitalité envers deux voyageurs mystérieux (peut-être des anges) fut récompensée par une abondance miraculeuse, fonda la dynastie. Son fils <strong>Siemowit</strong> expulsa le prince légitime Popiel — dévoré par des souris selon la légende — et jeta les bases du pouvoir piaste.</p>
+      <p>Historiquement, c'est <strong>Mieszko Ier</strong> (~935–992) qui est le premier souverain piaste attesté par les sources écrites. Avant lui, <strong>Siemomysł</strong> puis <strong>Lestek</strong> ont pu consolider un territoire, mais sans laisser de traces documentées. Mieszko dispose déjà d'une armée permanente de quelques milliers de guerriers (<em>drużyna</em>), financée par les tributs et le commerce, notamment d'esclaves.</p>
+    </div>
+
+    <a href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/df5bf485-f390-439d-80d8-f9ab225eedaa/dgpdmxc-94abd163-2e4c-4efd-857a-040270b55d15.png/v1/fill/w_802,h_997/slavic_tribes_and_states_900_by_metallist_99_dgpdmxc-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9Mzk4NCIsInBhdGgiOiIvZi9kZjViZjQ4NS1mMzkwLTQzOWQtODBkOC1mOWFiMjI1ZWVkYWEvZGdwZG14Yy05NGFiZDE2My0yZTRjLTRlZmQtODU3YS0wNDAyNzBiNTVkMTUucG5nIiwid2lkdGgiOiI8PTMyMDUifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.SiDF1_TjAboflPmPnlDnjn46IKtTQaLE2RBgR7Hlm7M" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — Tribus slaves en Pologne médiévale</span>
+        <span class="map-link-url">Slavic tribes in early medieval Poland</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Mieszko Ier et le baptême de 966 — l'acte fondateur</h3>
+    <div class="prose">
+      <p>Mieszko Ier règne sur un territoire d'environ 250 000 km², peuplé d'un million d'habitants. Il dirige une fédération tribale en voie d'unification, menacée à l'ouest par le <strong>Saint-Empire romain germanique</strong> (qui prétend soumettre les peuples pagans de l'Est) et par les <strong>Chevaliers de la Marche orientale</strong> (<em>Margraves</em>), chargés par l'Empereur d'étendre la christianisation vers l'est.</p>
+      <p>En 965, Mieszko épouse <strong>Doubravka de Bohême</strong>, fille du duc Boleslav Ier le Cruel. Ce mariage politique est assorti d'une condition : la conversion de Mieszko. Le <strong>14 avril 966</strong> (date probable, peut-être le jour de Pâques), Mieszko reçoit le baptême selon le rite latin — et non byzantin. Ce choix est capital :</p>
+    </div>
+    <div class="highlight gold">
+      <h4>Pourquoi le rite latin et non byzantin ?</h4>
+      <p>• L'Église romaine relevait du pape, non de Constantinople — elle offrait plus d'autonomie politique vis-à-vis des Francs</p>
+      <p>• La Bohême voisine était latine, facilitant l'alliance</p>
+      <p>• Le rite latin permettait la création d'un archevêché national indépendant</p>
+      <p>• Ce choix ancre la Pologne dans l'Europe occidentale pour les millénaires suivants</p>
+    </div>
+    <div class="prose">
+      <p>Mieszko place son État sous la protection directe du Saint-Siège via le document <em>Dagome iudex</em> (vers 990), premier acte d'État polonais connu — ce qui lui confère une protection contre les prétentions germaniques et fait de Rome le garant de l'indépendance polonaise.</p>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Mieszko_I_%28274939%29_%28cropped%29.jpg/960px-Mieszko_I_%28274939%29_%28cropped%29.jpg" alt="Mieszko Ier" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">👑</div>
+        <div class="person-body">
+          <div class="person-name">Mieszko Ier</div>
+          <div class="person-dates">~935 – 992</div>
+          <div class="person-desc">Premier duc de Pologne historiquement attesté. Son baptême de 966 fonde l'État polonais chrétien. Guerrier habile, il repousse les Saxons et étend ses frontières.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Mieszko_Ier" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Dobrawa_%28274945%29.jpg/960px-Dobrawa_%28274945%29.jpg" alt="Doubravka" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">👸</div>
+        <div class="person-body">
+          <div class="person-name">Doubravka de Bohême</div>
+          <div class="person-dates">~940 – 977</div>
+          <div class="person-desc">Princesse bohémienne, première épouse chrétienne de Mieszko Ier. Son mariage conditionne la conversion de Mieszko et joue un rôle décisif dans l'introduction du christianisme en Pologne.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Dubravka" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Poland_under_Mieszko_I.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — La Pologne sous Mieszko Ier (966–992)</span>
+        <span class="map-link-url">commons.wikimedia.org — Poland under Mieszko I</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <!-- QUIZ EP1 -->
+  <div class="quiz-section reveal" id="quiz-ep1">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — Les origines slaves</h3><span>6 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep1"></div></div>
+    <div id="qc-ep1"></div>
+    <div class="score-screen" id="ss-ep1">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep1">0</span><span class="score-d" id="sd-ep1">/6</span></div>
+      <p class="score-msg" id="sm-ep1"></p>
+      <button class="btn btn-ghost" onclick="restart('ep1')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">✦ ✦ ✦</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ÉPOQUE II — LA DYNASTIE DES PIASTS
+═══════════════════════════════════════════════════════ -->
+<section id="ep2" class="epoch">
+<div class="container">
+
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">II</div>
+    <div class="epoch-info">
+      <h2>La Pologne des Piasts — Construction et fragmentation</h2>
+      <span class="epoch-dates">992 – 1370</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Bolesław Ier le Vaillant — L'apogée des Piasts (992–1025)</h3>
+    <div class="prose">
+      <p>Fils de Mieszko, <strong>Bolesław Ier le Vaillant</strong> (<em>Bolesław Chrobry</em>) hérite d'un État solide et l'étend à des dimensions jamais atteintes. Il expulse d'abord ses demi-frères pour régner seul, puis mène une politique d'expansion agressive dans toutes les directions.</p>
+      <p>En l'an <strong>1000</strong>, l'<strong>empereur Otton III</strong> — jeune idéaliste rêvant d'une Europe chrétienne unie — effectue un pèlerinage au tombeau de saint <strong>Adalbert</strong> (évêque de Prague martyrisé par les Prussiens en 997 alors qu'il évangélisait sous patronage de Bolesław). Lors de la <strong>rencontre de Gniezno</strong>, Otton traite Bolesław en égal, lui pose sa couronne impériale sur la tête — geste symbolique fort — et accepte la création d'un <strong>archevêché indépendant</strong> à Gniezno, avec des évêchés suffragants à Kołobrzeg, Wrocław et Cracovie. La Pologne acquiert ainsi une organisation ecclésiastique autonome.</p>
+      <p>Bolesław mène des guerres victorieuses : contre l'Empire germanique (<strong>guerres polono-allemandes 1002–1018</strong>), conquérant la Lusace et la Misnie ; il s'empare de la <strong>Ruthénie rouge</strong> (Galicie), de la Moravie, de la Slovaquie et pousse jusqu'à Kiev en 1018 pour soutenir son gendre Sviatopolk. Il est couronné <strong>roi de Pologne</strong> en 1025, peu avant sa mort.</p>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Boleslaw_I_Chrobry_%28274954%29.jpg/960px-Boleslaw_I_Chrobry_%28274954%29.jpg" alt="Bolesław Ier" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">⚔️</div>
+        <div class="person-body">
+          <div class="person-name">Bolesław Ier le Vaillant</div>
+          <div class="person-dates">967 – 1025</div>
+          <div class="person-desc">Premier roi couronné de Pologne. Conquérant brillant, il porta le royaume à son apogée médiévale, obtint l'indépendance ecclésiastique et noua des alliances à travers toute l'Europe.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Boleslas_Ier_(roi_de_Pologne)" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Kazimierz_III_Wielki_%28275138%29.jpg/960px-Kazimierz_III_Wielki_%28275138%29.jpg" alt="Casimir III" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">👑</div>
+        <div class="person-body">
+          <div class="person-name">Casimir III le Grand</div>
+          <div class="person-dates">1310 – 1370</div>
+          <div class="person-desc">Seul roi polonais à porter le titre de « Grand ». Législateur, bâtisseur, diplomate. Il unifia les lois, fonda l'Université de Cracovie (1364) et protégea les Juifs. « Il trouva la Pologne en bois et la laissa en pierre. »</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Casimir_III_le_Grand" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Poland_under_Boleslaw_I.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — La Pologne sous Bolesław Ier (vers 1025)</span>
+        <span class="map-link-url">commons.wikimedia.org — Poland under Bolesław I</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Les invasions mongoles et la fragmentation (1138–1320)</h3>
+    <div class="prose">
+      <p>En <strong>1138</strong>, le testament de <strong>Bolesław III Bouche-Torse</strong> divise le royaume entre ses quatre fils, instituant une « principauté séniorale » à Cracovie théoriquement dominante. C'est le début de la <strong>fragmentation princière</strong> (<em>rozbicie dzielnicowe</em>) : 5, puis 6, puis davantage de principautés rivales s'affrontent pendant près de deux siècles, affaiblissant dramatiquement la défense du pays.</p>
+      <p>C'est dans ce contexte désastreux que surviennent les <strong>trois invasions mongoles</strong> :</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1241 — PREMIÈRE INVASION</div>
+        <div class="tl-text">Les tümens de Batu Khan et Subutaï franchissent les Carpates en février. Cracovie est brûlée (mars). Le <strong>9 avril</strong>, à la bataille de <strong>Legnica (Liegnitz)</strong>, l'armée polono-allemande du duc Henri II le Pieux est anéantie. Henri est décapité, sa tête promenée sur une lance. Les Mongols ne s'avancent pas plus loin vers l'ouest — la mort du Grand Khan Ögedei en Mongolie les force à rentrer.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1259 — DEUXIÈME INVASION</div>
+        <div class="tl-text">Burundai ravage la Petite-Pologne et la Grande-Pologne. Les habitants se réfugient dans les forêts. L'absence de résistance organisée permet aux Mongols de piller librement.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1287 — TROISIÈME INVASION</div>
+        <div class="tl-text">Nogaï Khan attaque mais se heurte à des défenses mieux organisées. La forteresse de Cracovie résiste. Les Mongols se retirent sans conquête durable. C'est leur dernière grande incursion en Pologne.</div>
+      </div>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Mongol_invasion_of_Poland.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — Les invasions mongoles en Pologne (1241–1287)</span>
+        <span class="map-link-url">commons.wikimedia.org — Mongol invasion of Poland</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+
+    <div class="prose">
+      <p>Les invasions mongoles ont un effet paradoxal positif : elles accélèrent l'urbanisation et l'immigration. Les princes polonais invitent massivement des colons <strong>allemands</strong> (<em>Ostsiedlung</em> — colonisation orientale) pour repeupler les villes dévastées : Cracovie, Wrocław, Poznań, Gdańsk reçoivent des chartes de <strong>droit de Magdebourg</strong> qui leur confèrent l'autonomie municipale. Des <strong>Juifs</strong> fuyant les persécutions d'Europe occidentale (croisades, légendes de meurtre rituel) s'établissent massivement en Pologne, attirés par la protection relative que leur offrent les princes.</p>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">La réunification et l'apogée : Władysław Ier et Casimir III (1320–1370)</h3>
+    <div class="prose">
+      <p><strong>Władysław Ier Łokietek</strong> (« le Bref », ~1,40m selon la légende) passe sa vie à unifier les principautés polonaises contre l'opposition des chevaliers teutoniques, de la Bohême et des villes germaniques. Il se fait couronner roi à Cracovie en <strong>1320</strong> — premier couronnement royal polonais depuis 1079. Son fils <strong>Casimir III le Grand</strong> (1333–1370) est le véritable architecte de la Pologne médiévale.</p>
+      <p>Casimir ne peut récupérer la Silésie (perdue au profit de la Bohême) ni la Poméranie (aux mains des Teutoniques), mais il conquiert la <strong>Ruthénie galicienne</strong> (1349–1366), doublant la superficie du royaume. Ses réformes sont extraordinaires : les <strong>Statuts de Wiślica et Piotrków</strong> (1347) unifient les lois disparates des principautés ; il fait construire ou renforcer 53 châteaux sur la « <strong>Traînée des nids d'aigles</strong> » (Szlak Orlich Gniazd), chaîne de forteresses protégeant la frontière méridionale ; il fonde l'<strong>Académie de Cracovie</strong> en 1364, réunissant des rois et savants d'Europe pour en définir le programme.</p>
+      <p>Sa politique envers les Juifs est remarquable : en <strong>1334</strong>, il confirme et étend les privilèges accordés par Bolesław le Pieux en 1264 (Statuts de Kalisz), protégeant les Juifs contre la violence, garantissant leur liberté de culte et d'activité économique. La Pologne devient le pays d'Europe où vivent le plus de Juifs.</p>
+    </div>
+    <div class="blockquote">
+      <p>Il trouva la Pologne en bois, il la laissa en pierre.</p>
+      <cite>— Jan Długosz, chroniqueur polonais, XVe siècle</cite>
+    </div>
+  </div>
+
+  <!-- QUIZ EP2 -->
+  <div class="quiz-section reveal" id="quiz-ep2">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — La dynastie des Piasts</h3><span>7 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep2"></div></div>
+    <div id="qc-ep2"></div>
+    <div class="score-screen" id="ss-ep2">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep2">0</span><span class="score-d" id="sd-ep2">/7</span></div>
+      <p class="score-msg" id="sm-ep2"></p>
+      <button class="btn btn-ghost" onclick="restart('ep2')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">✦ ✦ ✦</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- III JAGELLON -->
+<section id="ep3" class="epoch"><div class="container">
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">III</div>
+    <div class="epoch-info">
+      <h2>La Pologne jagellonne — Grandeur et humanisme</h2>
+      <span class="epoch-dates">1386 – 1572</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">L'Union de Krewo et le mariage fondateur (1385–1386)</h3>
+    <div class="prose">
+      <p>La mort de Casimir III sans héritier mâle en 1370 ouvre une crise dynastique. Son neveu, le roi de Hongrie <strong>Louis Ier d'Anjou</strong>, lui succède, mais à sa mort en 1382, sa fille cadette <strong>Jadwiga</strong> est choisie reine de Pologne. Elle a 11 ans. La haute noblesse polonaise (<em>szlachta</em>) cherche pour elle un époux qui renforce le royaume.</p>
+      <p>Le choix se porte sur <strong>Jogaila</strong> (Jagellon), grand-duc de Lituanie, pagien, dirigeant le plus grand État territorial d'Europe à l'époque. Le <strong>traité de Krewo</strong> (août 1385) prévoit qu'en échange de la main de Jadwiga, Jogaila se convertira au christianisme, épousera Jadwiga et « incorporera » ses terres à la couronne polonaise. Jogaila est baptisé <strong>Władysław II Jagellon</strong> en février 1386, épouse Jadwiga, et est couronné roi.</p>
+      <p>La Lituanie était le <strong>dernier État officiellement pagien d'Europe</strong>. Sa conversion est massive mais superficielle : les Lituaniens du peuple restent attachés à leurs traditions. Mais l'acte politique est fondamental : l'Ordre Teutonique perd son principal argument pour ses croisades en Lituanie.</p>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Jadwiga_of_Poland.jpg/320px-Jadwiga_of_Poland.jpg" alt="Jadwiga" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">👑</div>
+        <div class="person-body">
+          <div class="person-name">Jadwiga de Pologne</div>
+          <div class="person-dates">1374 – 1399</div>
+          <div class="person-desc">Reine de Pologne à 11 ans. Elle sacrifie son amour pour Wilhelm de Habsbourg pour épouser Jagellon par raison d'État. Érudite et pieuse, elle restaure l'Université de Cracovie. Canonisée par Jean-Paul II en 1997.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Jadwiga_de_Pologne" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Wladyslaw_II_Jagiello_of_Poland.jpg/320px-Wladyslaw_II_Jagiello_of_Poland.jpg" alt="Jagellon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">⚔️</div>
+        <div class="person-body">
+          <div class="person-name">Władysław II Jagellon</div>
+          <div class="person-dates">~1351 – 1434</div>
+          <div class="person-desc">Grand-duc lituanien devenu roi de Pologne. Fondateur de la dynastie des Jagellon. Vainqueur de Grunwald. Régna 48 ans, consolidant l'union polono-lituanienne.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Ladislas_II_Jagellon" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">La guerre contre l'Ordre Teutonique et la bataille de Grunwald (1409–1411)</h3>
+    <div class="prose">
+      <p>L'<strong>Ordre Teutonique</strong> (fondé en 1190 en Terre Sainte, établi en Prusse depuis 1230) contrôle un État-moine puissant sur la Baltique, rendant la Pologne enclavée. La conversion de la Lituanie lui retire sa raison d'être, mais il continue à menacer les territoires polonais et lituaniens. La crise éclate autour de la <strong>Samogitie</strong>, région lituanienne sous contrôle teutonique.</p>
+      <p>En août 1409, l'Ordre déclare la guerre. Les deux camps rassemblent leurs forces. Le <strong>15 juillet 1410</strong>, à la bataille de <strong>Grunwald</strong> (Tannenberg en allemand), les armées polono-lituaniennes affrontent les Chevaliers :</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box"><span class="stat-num">39 000</span><span class="stat-label">combattants polono-lituaniens (dont mercenaires tchèques)</span></div>
+      <div class="stat-box"><span class="stat-num">27 000</span><span class="stat-label">Chevaliers Teutoniques et leurs alliés</span></div>
+      <div class="stat-box"><span class="stat-num">200</span><span class="stat-label">chevaliers teutoniques tués ou capturés</span></div>
+      <div class="stat-box"><span class="stat-num">1</span><span class="stat-label">Grand Maître tué : Ulrich von Jungingen</span></div>
+    </div>
+    <div class="prose">
+      <p>La victoire est totale. Cependant, Jagellon hésite à assiéger Marienbourg (le château-capitale de l'Ordre) et négocie la <strong>Paix de Thorn</strong> (1411), modeste : l'Ordre ne perd que la Samogitie (à titre viager pour Jagellon et son cousin Vytautas). La vraie liquidation de l'Ordre vient plus tard : la <strong>guerre des Treize Ans</strong> (1454–1466) se conclut par la <strong>Seconde Paix de Thorn</strong> (1466), donnant à la Pologne la Prusse Royale (dont Gdańsk) et la suzeraineté sur la Prusse ducale.</p>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Battle_of_Grunwald_1410.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — La bataille de Grunwald (1410)</span>
+        <span class="map-link-url">commons.wikimedia.org — Battle of Grunwald 1410</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">L'âge d'or des Jagellon (XVe–XVIe siècle)</h3>
+    <div class="prose">
+      <p>Sous les successeurs de Jagellon, la Pologne connaît son <strong>âge d'or</strong> (<em>złoty wiek</em>). La Renaissance italienne pénètre à Cracovie, qui devient une des villes les plus cultivées d'Europe. <strong>Nicolas Copernic</strong> (1473–1543), formé à Cracovie puis en Italie, publie en 1543 son <em>De revolutionibus orbium coelestium</em>, révélant que la Terre tourne autour du Soleil. <strong>Jan Kochanowski</strong> (1530–1584) fonde la poésie lyrique polonaise. L'imprimerie diffuse la culture en langue polonaise.</p>
+      <p>La <strong>Confédération de Varsovie</strong> (28 janvier 1573) est un document exceptionnel : dans une Europe déchirée par les guerres de religion (Saint-Barthélemy en 1572 !), la noblesse polonaise garantit la paix religieuse entre catholiques, luthériens, calvinistes, frères polonais (sociniens) et orthodoxes. C'est l'un des premiers actes de tolérance religieuse légale au monde.</p>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Nikolaj_Kopernik.jpg/320px-Nikolaj_Kopernik.jpg" alt="Copernic" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">🔭</div>
+        <div class="person-body">
+          <div class="person-name">Nicolas Copernic</div>
+          <div class="person-dates">1473 – 1543</div>
+          <div class="person-desc">Astronome, médecin, économiste et chanoine catholique. Né à Toruń. Publie l'héliocentrisme en 1543. Révolution scientifique majeure qui changera la vision du monde occidental.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Nicolas_Copernic" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Jan_Kochanowski_by_Jan_Matejko.jpg/320px-Jan_Kochanowski_by_Jan_Matejko.jpg" alt="Kochanowski" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">📜</div>
+        <div class="person-body">
+          <div class="person-name">Jan Kochanowski</div>
+          <div class="person-dates">1530 – 1584</div>
+          <div class="person-desc">Poète de la Renaissance polonaise, considéré comme le plus grand poète de la littérature polonaise avant le XIXe siècle. Ses <em>Trènes</em> sur la mort de sa fille sont des chefs-d'œuvre universels.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Jan_Kochanowski" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ EP3 -->
+  <div class="quiz-section reveal" id="quiz-ep3">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — La Pologne jagellonne</h3><span>6 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep3"></div></div>
+    <div id="qc-ep3"></div>
+    <div class="score-screen" id="ss-ep3">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep3">0</span><span class="score-d" id="sd-ep3">/6</span></div>
+      <p class="score-msg" id="sm-ep3"></p>
+      <button class="btn btn-ghost" onclick="restart('ep3')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">✦ ✦ ✦</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- IV REPUBLIQUE -->
+<section id="ep4" class="epoch"><div class="container">
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">IV</div>
+    <div class="epoch-info">
+      <h2>La République des Deux Nations — Apogée et déclin</h2>
+      <span class="epoch-dates">1569 – 1772</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">L'Union de Lublin (1569) et la Rzeczpospolita</h3>
+    <div class="prose">
+      <p>L'extinction imminente de la lignée jagellonne pousse Sigismond II Auguste à formaliser l'union polono-lituanienne. L'<strong>Union de Lublin</strong> (1er juillet 1569) crée la <strong>Rzeczpospolita des Deux Nations</strong> (<em>République des Deux Nations</em>) : un État fédéral unique avec un roi élu commun, un Sejm commun, une politique étrangère commune, mais des droits, armées et trésors distincts pour chaque partie.</p>
+      <p>Le système politique est unique en Europe : une <strong>démocratie nobiliaire</strong> (<em>demokracja szlachecka</em>) où la noblesse — qui représente 8 à 10% de la population, contre 1-2% ailleurs — détient des droits considérables. Le roi est élu par la noblesse (<em>wolna elekcja</em> — élection libre). Le Sejm vote à l'unanimité. L'<em>Aurea Libertas</em> (Liberté Dorée) comprend notamment le droit de <strong><em>liberum veto</em></strong> : depuis 1652, un seul député peut dissoudre le Sejm et annuler toutes ses décisions par un simple « Je m'y oppose » (<em>Nie pozwalam</em>).</p>
+    </div>
+    <div class="highlight">
+      <h4>Le liberum veto — génie et poison</h4>
+      <p>Sur 55 Sejm tenus entre 1652 et 1764, <strong>48 furent dissous</strong> par le liberum veto. Des puissances étrangères — Russie, Prusse, France — soudoient des nobles pour paralyser les réformes. Ce mécanisme, né de l'idéal de liberté nobiliaire absolue, devient le principal outil de la désagrégation polonaise.</p>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Polish-Lithuanian_Commonwealth_at_its_greatest_extent.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — La Rzeczpospolita à son apogée (vers 1619)</span>
+        <span class="map-link-url">commons.wikimedia.org — Polish-Lithuanian Commonwealth greatest extent</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Le XVIIe siècle : le siècle des catastrophes</h3>
+    <div class="prose">
+      <p>La Rzeczpospolita atteint son apogée territorial vers 1619 (~1 million de km²) mais entre aussitôt dans un cycle de guerres dévastatrices :</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1618–1648 — Guerre de Trente Ans</div>
+        <div class="tl-text">La Pologne reste officiellement neutre mais est touchée par les périphéries. Les mercenaires et épidémies ravagent les frontières.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1648–1654 — Soulèvement de Khmelnytsky</div>
+        <div class="tl-text">Le hetman cosaque <strong>Bogdan Khmelnytsky</strong> se soulève contre la domination polonaise en Ukraine. Les Cosaques massacrent des centaines de milliers de Polonais et de Juifs dans des pogroms d'une violence extrême. En 1654, Khmelnytsky se place sous la protection du tsar de Russie (<em>Traité de Pereïaslav</em>) — début de la perte de l'Ukraine pour la Pologne.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1655–1660 — Le Déluge suédois</div>
+        <div class="tl-text">La Suède de Charles X Gustave envahit la Pologne. En quelques semaines, presque tout le pays est occupé. Gdańsk, Cracovie, Varsovie tombent. Seul le <strong>monastère de Jasna Góra</strong> à Częstochowa résiste (18 novembre – 26 décembre 1655) avec 160 défenseurs contre 3 000 Suédois. Cette résistance miraculeuse galvanise la résistance nationale. Le roi <strong>Jean II Casimir</strong> proclame la Vierge de Częstochowa <strong>Reine de Pologne</strong>. La guerre se termine par la Paix d'Oliwa (1660), relativement favorable, mais le pays est dévasté : la population diminue d'un tiers.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1672–1676 — Guerre polono-ottomane</div>
+        <div class="tl-text">Les Ottomans envahissent la Pologne et s'emparent de Kamieniec Podolski. Le <strong>Traité de Buczacz</strong> (1672) est une humiliation : la Pologne cède la Podolie et paye un tribut. Jean III Sobieski renverse la situation à la bataille de Khotin (1673).</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1683 — Siège de Vienne</div>
+        <div class="tl-text">Le Grand Vizir Kara Mustafa assiège Vienne avec 140 000 hommes. Le roi polonais <strong>Jean III Sobieski</strong>, à la tête d'une armée de secours de 80 000 hommes (dont 30 000 Polonais et la plus grande charge de cavalerie de l'histoire — les <em>hussards ailés</em>), brise le siège le 12 septembre. C'est la dernière grande victoire polonaise avant le déclin.</div>
+      </div>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Jan_III_Sobieski%2C_Palais_de_Versailles.jpg/320px-Jan_III_Sobieski%2C_Palais_de_Versailles.jpg" alt="Jean III Sobieski" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">⚔️</div>
+        <div class="person-body">
+          <div class="person-name">Jean III Sobieski</div>
+          <div class="person-dates">1629 – 1696</div>
+          <div class="person-desc">Roi de Pologne et héros de la chrétienté. Sa victoire à Vienne en 1683 arrête l'expansion ottomane. Stratège brillant, il ne peut cependant enrayer le déclin de la Rzeczpospolita.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Jean_III_Sobieski" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Battle_of_Vienna_1683.PNG" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — La bataille de Vienne (1683)</span>
+        <span class="map-link-url">commons.wikimedia.org — Battle of Vienna 1683</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <!-- QUIZ EP4 -->
+  <div class="quiz-section reveal" id="quiz-ep4">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — La République nobiliaire</h3><span>7 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep4"></div></div>
+    <div id="qc-ep4"></div>
+    <div class="score-screen" id="ss-ep4">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep4">0</span><span class="score-d" id="sd-ep4">/7</span></div>
+      <p class="score-msg" id="sm-ep4"></p>
+      <button class="btn btn-ghost" onclick="restart('ep4')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">✦ ✦ ✦</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- V PARTAGES -->
+<section id="ep5" class="epoch"><div class="container">
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">V</div>
+    <div class="epoch-info">
+      <h2>Les Partages — La disparition d'un État</h2>
+      <span class="epoch-dates">1772 – 1918</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Les conditions du démembrement</h3>
+    <div class="prose">
+      <p>Le XVIIIe siècle voit la Pologne s'enfoncer dans une paralysie politique croissante. La Grande Guerre du Nord (1700–1721), qui voit Charles XII de Suède et Pierre le Grand de Russie se battre sur son territoire, dévaste le pays. La <strong>Guerre de la Succession polonaise</strong> (1733–1735) est arbitrée par les puissances étrangères. La <strong>«&nbsp;Guerre de la Paix&nbsp;»</strong> — en fait la domination russe — s'installe sous les règnes d'Auguste III et de Stanisław II Auguste Poniatowski, amant et protégé de Catherine II.</p>
+      <p>Les trois puissances voisines voient une opportunité unique : démembrer un État incapable de se défendre sans déclencher un conflit entre elles. Frederick II de Prusse conçoit le plan, Catherine II l'approuve, Marie-Thérèse d'Autriche y participe à contre-cœur (elle dira : « elle pleure, et elle prend »).</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1772 — Premier Partage</div>
+        <div class="tl-text">La Russie prend les territoires biélorusses et ukrainiens du nord-est. La Prusse s'empare de la Prusse royale (sauf Gdańsk), coupant la Pologne de la mer. L'Autriche annexe la Galicie. La Pologne perd 30% de son territoire et 35% de sa population.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1791 — Constitution du 3 mai</div>
+        <div class="tl-text">Dans un sursaut réformiste, la Pologne adopte la <strong>première constitution écrite d'Europe</strong> (deuxième au monde après les USA, 1787). Elle abolit le liberum veto, institue une monarchie héréditaire constitutionnelle, étend les droits aux bourgeois. Trop tard.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1792–1793 — La guerre en défense de la Constitution et le 2e Partage</div>
+        <div class="tl-text">La Russie envahit pour « protéger » les nobles anti-réformistes (<em>Confédération de Targowica</em>). La Pologne, trahie par son propre roi, capitule. La Prusse profite de la situation. Deuxième partage : la Pologne perd encore la moitié de ce qui reste.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1794 — Insurrection de Kościuszko</div>
+        <div class="tl-text"><strong>Tadeusz Kościuszko</strong>, héros de la guerre d'Indépendance américaine (Saratoga, 1777 ; West Point), revient pour diriger l'insurrection nationale. Il remporte la <strong>bataille de Racławice</strong> (4 avril 1794) en utilisant des paysans armés de faux (<em>kosynierzy</em>). Mais les défaites s'accumulent. Blessé et capturé à Maciejowice (10 octobre), il est emprisonné à Saint-Pétersbourg.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1795 — Troisième et dernier Partage</div>
+        <div class="tl-text">La Pologne disparaît de la carte de l'Europe. Les trois puissances s'engagent à ne jamais reconnaître le nom de Pologne dans leurs titres officiels. Stanisław Auguste Poniatowski abdique. 123 ans d'occupation commencent.</div>
+      </div>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tadeusz_Ko%C5%9Bciuszko_by_Karl_Gottlieb_Schweikart.jpg/320px-Tadeusz_Ko%C5%9Bciuszko_by_Karl_Gottlieb_Schweikart.jpg" alt="Kościuszko" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">⚔️</div>
+        <div class="person-body">
+          <div class="person-name">Tadeusz Kościuszko</div>
+          <div class="person-dates">1746 – 1817</div>
+          <div class="person-desc">Héros national polonais et américain. Ingénieur militaire à West Point, il mène l'insurrection de 1794. Libéré par Paul Ier, il refuse de servir Napoléon qui ne garantit pas l'indépendance polonaise.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Tadeusz_Ko%C5%9Bciuszko" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Adam_Mickiewicz_by_Walenty_Wańkowicz_-_detail.jpg/320px-Adam_Mickiewicz_by_Walenty_Wańkowicz_-_detail.jpg" alt="Mickiewicz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">📜</div>
+        <div class="person-body">
+          <div class="person-name">Adam Mickiewicz</div>
+          <div class="person-dates">1798 – 1855</div>
+          <div class="person-desc">Plus grand poète polonais, « barde national ». Auteur de <em>Pan Tadeusz</em> (1834), épopée nationale écrite en exil. Son œuvre entretient l'identité nationale pendant l'occupation. Professeur au Collège de France.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Adam_Mickiewicz" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Frederic_Chopin_photo.jpeg/320px-Frederic_Chopin_photo.jpeg" alt="Chopin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">🎹</div>
+        <div class="person-body">
+          <div class="person-name">Frédéric Chopin</div>
+          <div class="person-dates">1810 – 1849</div>
+          <div class="person-desc">Compositeur et pianiste. Né en Pologne, exilé à Paris après 1831. Ses mazurkas et polonaises expriment la nostalgie nationale. Son cœur, selon ses vœux, fut rapporté en Pologne après sa mort.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Chopin" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Partitions_of_Poland.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — Les trois partages de la Pologne (1772–1795)</span>
+        <span class="map-link-url">commons.wikimedia.org — Partitions of Poland</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Les insurrections et la résistance culturelle (1807–1918)</h3>
+    <div class="prose">
+      <p>Napoléon crée le <strong>Duché de Varsovie</strong> (1807–1815), État fantoche polonais qui ravive l'espoir et fournit 100 000 soldats à la Grande Armée. Sa chute et le <strong>Congrès de Vienne</strong> (1815) transforment ce duché en « Royaume du Congrès », formellement autonome mais sous tutelle russe. Quatre grandes insurrections jalonnent le siècle :</p>
+      <p><strong>Insurrection de Novembre</strong> (1830–1831) : déclenchée par des officiers après la menace d'envoyer l'armée polonaise réprimer des révolutions en France et en Belgique. Après des succès initiaux, écrasée à Ostroleka (1831). 80 000 déportés en Sibérie. Le Royaume du Congrès perd son autonomie. C'est la « Grande Émigration » : 6 000 intellectuels — Mickiewicz, Słowacki, Chopin — s'établissent à Paris, constituant un gouvernement en exil.</p>
+      <p><strong>Insurrection de Novembre de Poznań</strong> (1848) : profitant du Printemps des Peuples, les Polonais de Prusse se soulèvent brièvement. Écrasé en quelques semaines.</p>
+      <p><strong>Insurrection de Janvier</strong> (1863–1864) : la plus longue — 16 mois de guérilla contre la Russie. 200 000 combattants, mais jamais de bataille rangée. La répression est totale : 400 condamnés à mort, 38 000 déportés en Sibérie, confiscation de 1 700 domaines. La langue polonaise est interdite à l'école et dans les actes publics dans la zone russe. La russification devient politique d'État.</p>
+      <p>Sous occupation autrichienne (<strong>Galicie</strong>), la Pologne bénéficie d'une autonomie relative après 1867 : les universités de Cracovie et Lwów fonctionnent en polonais, une vie culturelle polonaise s'épanouit, faisant de la Galicie le « Piémont polonais ».</p>
+    </div>
+  </div>
+
+  <!-- QUIZ EP5 -->
+  <div class="quiz-section reveal" id="quiz-ep5">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — Les Partages (1772–1918)</h3><span>8 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep5"></div></div>
+    <div id="qc-ep5"></div>
+    <div class="score-screen" id="ss-ep5">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep5">0</span><span class="score-d" id="sd-ep5">/8</span></div>
+      <p class="score-msg" id="sm-ep5"></p>
+      <button class="btn btn-ghost" onclick="restart('ep5')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">✦ ✦ ✦</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- VI INDÉPENDANCE -->
+<section id="ep6" class="epoch"><div class="container">
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">VI</div>
+    <div class="epoch-info">
+      <h2>La IIe République — Indépendance et entre-deux-guerres</h2>
+      <span class="epoch-dates">1918 – 1939</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">La renaissance de 1918 et la guerre polono-soviétique</h3>
+    <div class="prose">
+      <p>L'effondrement simultané des trois empires occupants (russe en 1917, austro-hongrois et allemand en 1918) crée une fenêtre historique unique. Le <strong>11 novembre 1918</strong>, le Conseil de Régence remet les pouvoirs militaires à <strong>Józef Piłsudski</strong>, rentré la veille de la forteresse de Magdebourg où il était emprisonné. C'est la renaissance de l'État polonais.</p>
+      <p>Mais les frontières restent à définir par les armes. La jeune République affronte simultanément l'Ukraine, la Lituanie, la Tchécoslovaquie (pour la Cieszyn Silésie) et surtout la <strong>Russie soviétique</strong>. La <strong>guerre polono-soviétique</strong> (1919–1921) est la crise fondatrice de la IIe République.</p>
+      <p>En été 1920, l'Armée rouge de <strong>Toukhatchevski</strong>, forte de 800 000 hommes, avance sur Varsovie avec l'ambition explicite de porter la révolution en Allemagne et en Europe. Varsovie est assiégée. Les chancelleries occidentales préparent l'évacuation. C'est la « <strong>Bataille de Varsovie</strong> » (13–25 août 1920) — le « <strong>Miracle sur la Vistule</strong> » — qui renverse la situation. Piłsudski conçoit une manœuvre de flanc brillante : pendant que le centre polonais résiste devant Varsovie, une armée de choc frappe le flanc sud des Soviétiques. Toukhatchevski est encerclé et l'Armée rouge s'effondre : 66 000 prisonniers, 230 canons capturés, 120 000 fuyards internés en Allemagne.</p>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/J%C3%B3zef_Pi%C5%82sudski.jpg/320px-J%C3%B3zef_Pi%C5%82sudski.jpg" alt="Piłsudski" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">🎖️</div>
+        <div class="person-body">
+          <div class="person-name">Józef Piłsudski</div>
+          <div class="person-dates">1867 – 1935</div>
+          <div class="person-desc">Père fondateur de la IIe République polonaise. Révolutionnaire socialiste devenu nationaliste pragmatique. Vainqueur de Varsovie (1920). Son coup d'État de 1926 instaure le régime de Sanacja. Personnalité la plus vénérée de l'histoire polonaise moderne.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/J%C3%B3zef_Pi%C5%82sudski" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Ignacy_Jan_Paderewski_-_photo_portrait.jpg/320px-Ignacy_Jan_Paderewski_-_photo_portrait.jpg" alt="Paderewski" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">🎹</div>
+        <div class="person-body">
+          <div class="person-name">Ignacy Jan Paderewski</div>
+          <div class="person-dates">1860 – 1941</div>
+          <div class="person-desc">Pianiste de génie et homme d'État. Premier ministre (1919). Il convaincre Wilson de soutenir l'indépendance polonaise. Le 13e des 14 Points de Wilson prévoyait explicitement la création d'un État polonais.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Ignacy_Jan_Paderewski" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Battle_of_Warsaw_1920.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — La bataille de Varsovie, août 1920 (Miracle sur la Vistule)</span>
+        <span class="map-link-url">commons.wikimedia.org — Battle of Warsaw 1920</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">L'entre-deux-guerres : démocratie, coup d'État et menaces</h3>
+    <div class="prose">
+      <p>La <strong>Constitution de mars 1921</strong> établit une démocratie parlementaire. Mais l'instabilité est chronique : 14 gouvernements en 5 ans. En <strong>mai 1926</strong>, Piłsudski effectue le <strong>coup d'État dit « coup de mai »</strong> (<em>zamach majowy</em>) : ses troupes marchent sur Varsovie, 379 personnes sont tuées dans les combats de rues. Il s'empare du pouvoir de facto, instituant le régime autoritaire de la <strong>Sanacja</strong> (assainissement moral et politique). Piłsudski ne prend pas formellement le titre de dictateur mais contrôle tout jusqu'à sa mort en 1935.</p>
+      <p>Sur le plan international, la Pologne signe des <strong>pactes de non-agression</strong> avec l'URSS (1932) et l'Allemagne nazie (1934 — le pacte Piłsudski-Hitler). Mais ces garanties papier ne résistent pas aux ambitions expansionnistes des voisins. Après la mort de Piłsudski, le gouvernement des colonels (<em>pułkownicy</em>) adopte une politique étrangère rigide : refus de laisser transiter l'Armée rouge pour défendre la Tchécoslovaquie (1938), participation aux accords de Munich par la <strong>saisie de Cieszyn</strong> — ce que Churchill appelle « l'hyène de l'Europe ».</p>
+      <p>En <strong>août 1939</strong>, la Pologne est encerclée : à l'ouest, l'Allemagne nazie réclame Dantzig et le « corridor polonais ». À l'est, l'URSS attend. Le <strong>23 août 1939</strong>, le pacte Molotov-Ribbentrop scelle le sort de la Pologne.</p>
+    </div>
+  </div>
+
+  <!-- QUIZ EP6 -->
+  <div class="quiz-section reveal" id="quiz-ep6">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — La IIe République (1918–1939)</h3><span>6 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep6"></div></div>
+    <div id="qc-ep6"></div>
+    <div class="score-screen" id="ss-ep6">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep6">0</span><span class="score-d" id="sd-ep6">/6</span></div>
+      <p class="score-msg" id="sm-ep6"></p>
+      <button class="btn btn-ghost" onclick="restart('ep6')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">✦ ✦ ✦</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- VII WWII -->
+<section id="ep7" class="epoch"><div class="container">
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">VII</div>
+    <div class="epoch-info">
+      <h2>La Seconde Guerre mondiale — La grande catastrophe</h2>
+      <span class="epoch-dates">1939 – 1945</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">L'invasion et la double occupation (1939)</h3>
+    <div class="prose">
+      <p>Le <strong>1er septembre 1939</strong> à 4h45, la Wehrmacht franchit la frontière polonaise sur toute sa longueur. La marine allemande bombarde la péninsule de Westerplatte à Gdańsk, défendue par 182 soldats polonais pendant 7 jours. Les Stukas terrorisent les populations civiles. Le <strong>17 septembre</strong>, conformément au protocole secret du pacte Molotov-Ribbentrop, l'Armée rouge attaque à l'est avec 500 000 hommes.</p>
+      <p>La Pologne résiste seule : la France et le Royaume-Uni ont déclaré la guerre le 3 septembre mais ne lancent aucune offensive significative. L'armée polonaise se bat courageusement mais est submergée. Varsovie capitule le 28 septembre après un siège brutal. La dernière résistance organisée cesse le 5 octobre.</p>
+      <p>L'organisation territoriale de l'occupation :</p>
+    </div>
+    <div class="highlight">
+      <h4>Division du territoire polonais occupé</h4>
+      <p>• <strong>Zones annexées au Reich</strong> : Poznań, Poméranie, Silésie, Łódź — germanisation forcée, expulsions massives de Polonais</p>
+      <p>• <strong>Gouvernement général</strong> (Hans Frank) : territoire central dont Cracovie et Varsovie — exploitation totale, extermination</p>
+      <p>• <strong>Zone soviétique</strong> : territoires de l'est (Lwów, Vilnius, Białystok) — déportations en masse en Sibérie (1,5 million de personnes)</p>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Occupied_Poland_1939.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — La Pologne occupée (1939–1941)</span>
+        <span class="map-link-url">commons.wikimedia.org — Occupied Poland 1939</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">La Shoah — L'extermination des Juifs de Pologne</h3>
+    <div class="prose">
+      <p>La Pologne d'avant-guerre comptait <strong>3,3 millions de Juifs</strong> — la plus grande communauté juive du monde. Les nazis y construisent tous leurs grands camps d'extermination, profitant de la densité de population juive et de l'éloignement de l'opinion publique occidentale.</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box"><span class="stat-num">1,1M</span><span class="stat-label">victimes d'Auschwitz-Birkenau</span></div>
+      <div class="stat-box"><span class="stat-num">900K</span><span class="stat-label">victimes de Treblinka</span></div>
+      <div class="stat-box"><span class="stat-num">500K</span><span class="stat-label">victimes de Bełżec</span></div>
+      <div class="stat-box"><span class="stat-num">90%</span><span class="stat-label">des Juifs polonais assassinés</span></div>
+    </div>
+    <div class="prose">
+      <p>La <strong>conférence de Wannsee</strong> (20 janvier 1942) planifie la « Solution finale ». L'<strong>Opération Reinhard</strong> (1942–1943) extermine les Juifs des ghettos du Gouvernement général dans les camps spécialement construits de Treblinka, Sobibor, Bełżec, Chełmno. Les <strong>Einsatzgruppen</strong> fusillent les Juifs à l'est, notamment à Babi Yar (Kiev, 33 000 tués en 36 heures).</p>
+      <p>Le <strong>soulèvement du ghetto de Varsovie</strong> (19 avril – 16 mai 1943) est l'acte de résistance le plus symbolique. 750 combattants du ZOB (<em>Żydowska Organizacja Bojowa</em>) sous les ordres de <strong>Mordechai Anielewicz</strong> (24 ans) tiennent un mois face aux SS du général Jürgen Stroop (qui reçoit l'ordre de raser le ghetto en 3 jours). À l'issue du combat, le ghetto est entièrement rasé, Anielewicz et la plupart des combattants morts. 7 000 Juifs périssent dans les combats ou les flammes, 50 000 sont déportés à Treblinka.</p>
+      <p><strong>Jan Karski</strong>, courrier du gouvernement polonais en exil, informe personnellement Roosevelt et Churchill du génocide en cours en 1943. Il se heurte à l'incrédulité et à l'inaction.</p>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mordechai_Anielewicz.jpg/320px-Mordechai_Anielewicz.jpg" alt="Anielewicz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">✊</div>
+        <div class="person-body">
+          <div class="person-name">Mordechai Anielewicz</div>
+          <div class="person-dates">1919 – 1943</div>
+          <div class="person-desc">Commandant du soulèvement du ghetto de Varsovie. Il meurt à 24 ans dans son bunker du 18, rue Mila. Son soulèvement devient le symbole de la résistance juive face à la Shoah.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Mordechai_Anielewicz" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Witold_Pilecki.jpg/320px-Witold_Pilecki.jpg" alt="Pilecki" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">🎖️</div>
+        <div class="person-body">
+          <div class="person-name">Witold Pilecki</div>
+          <div class="person-dates">1901 – 1948</div>
+          <div class="person-desc">Officier de l'Armia Krajowa qui se fit volontairement déporter à Auschwitz pour en rapporter des témoignages. Il s'évada en 1943, combattit à Varsovie en 1944. Fusillé par les communistes en 1948.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Witold_Pilecki" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Extermination_camps_in_occupied_Poland.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — Les camps d'extermination en Pologne occupée</span>
+        <span class="map-link-url">commons.wikimedia.org — Extermination camps in occupied Poland</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Katyń et les crimes soviétiques</h3>
+    <div class="prose">
+      <p>En <strong>mars–avril 1940</strong>, Staline approuve personnellement l'exécution de <strong>21 857 citoyens polonais</strong> — officiers, policiers, intellectuels, propriétaires terriens — dans les forêts de Katyń, Kalinine (Tver) et Kharkiv. Le NKVD les abat d'une balle dans la nuque. C'est un génocide de l'élite polonaise : le but est d'empêcher toute résistance organisée en cas de future insurrection.</p>
+      <p>Découverts par les Allemands en 1943, les charniers sont utilisés pour une propagande anti-soviétique. L'URSS attribue le massacre aux Allemands. Le gouvernement polonais en exil demande une enquête de la Croix-Rouge — Stalin rompt les relations diplomatiques. Churchill étouffe l'affaire pour ne pas compromettre l'alliance soviétique. L'URSS nie le massacre jusqu'en <strong>1990</strong>, quand Gorbatchev reconnaît officiellement la responsabilité soviétique.</p>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">L'insurrection de Varsovie (1944) — La tragédie finale</h3>
+    <div class="prose">
+      <p>Le <strong>1er août 1944</strong>, l'Armée de l'Intérieur (<em>Armia Krajowa</em>), commandée par le général <strong>Tadeusz Bór-Komorowski</strong>, déclenche l'insurrection de Varsovie. L'objectif : libérer la capitale avant l'Armée rouge, afin d'y accueillir les Soviétiques en maîtres et non en libérateurs. 40 000 combattants (dont 4 000 femmes) s'emparent de larges parties de la ville.</p>
+      <p>L'Armée rouge de <strong>Rokossovsky</strong> s'arrête sur la rive droite de la Vistule et ne bouge plus. Staline refuse même d'autoriser les avions alliés à se ravitailler à Varsovie pour des largages. <strong>Churchill</strong> supplie Staline, en vain. Les raisons sont politiques : Staline ne veut pas d'une Pologne libre gouvernée par le gouvernement en exil londonien.</p>
+      <p>Pendant <strong>63 jours</strong>, les insurgés tiennent face aux divisions SS. Les massacres de civils sont systématiques : à Wola, les SS du général Bach-Zelewski tuent 40 000 civils en quelques jours. Au total, <strong>200 000 civils</strong> périssent. Le 2 octobre, Bór-Komorowski capitule avec les honneurs militaires. Hitler ordonne la destruction totale de Varsovie : 85% de la ville est rasée méthodiquement, bâtiment par bâtiment.</p>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Warsaw_Uprising_1944.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — L'insurrection de Varsovie (août–octobre 1944)</span>
+        <span class="map-link-url">commons.wikimedia.org — Warsaw Uprising 1944</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <!-- QUIZ EP7 -->
+  <div class="quiz-section reveal" id="quiz-ep7">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — La Seconde Guerre mondiale</h3><span>8 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep7"></div></div>
+    <div id="qc-ep7"></div>
+    <div class="score-screen" id="ss-ep7">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep7">0</span><span class="score-d" id="sd-ep7">/8</span></div>
+      <p class="score-msg" id="sm-ep7"></p>
+      <button class="btn btn-ghost" onclick="restart('ep7')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">✦ ✦ ✦</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- VIII COMMUNISME -->
+<section id="ep8" class="epoch"><div class="container">
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">VIII</div>
+    <div class="epoch-info">
+      <h2>La République populaire — Le communisme et la résistance</h2>
+      <span class="epoch-dates">1945 – 1989</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">L'imposition du communisme et le déplacement des frontières</h3>
+    <div class="prose">
+      <p>Les accords de <strong>Yalta</strong> (février 1945) livrent de facto la Pologne à l'URSS. Les frontières sont radicalement redessinées : la Pologne perd ses territoires orientaux (Lwów, Vilnius, Białystok) annexés par l'URSS, et reçoit en compensation les anciennes terres allemandes à l'est de la ligne Oder-Neisse (Silésie, Poméranie, Prusse orientale méridionale). Des <strong>millions de personnes</strong> sont déplacées de force : 4 millions d'Allemands expulsés vers l'ouest, 1,5 million de Polonais expulsés de l'est soviétique vers l'ouest.</p>
+      <p>Le gouvernement communiste s'impose par une terreur progressive : élections truquées (1947), arrestation des opposants, dissolution des partis. Le référendum de 1946, organisé pour légitimer le nouveau régime, est massivement falsifié. Le chef du Parti paysan, <strong>Stanisław Mikołajczyk</strong>, doit fuir en 1947 pour échapper à l'arrestation. La <strong>sécurité politique</strong> (UB, puis SB) surveille et réprime toute opposition.</p>
+    </div>
+
+    <a href="https://commons.wikimedia.org/wiki/File:Poland_1945_borders.png" target="_blank" class="map-link">
+      <span class="map-link-icon">🗺️</span>
+      <span class="map-link-text">
+        <span class="map-link-title">Carte — Les nouvelles frontières de la Pologne après 1945</span>
+        <span class="map-link-url">commons.wikimedia.org — Poland 1945 borders changes</span>
+      </span>
+      <span class="map-link-arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Les crises de la Pologne communiste (1956–1981)</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1956 — Octobre polonais</div>
+        <div class="tl-text">La révolte ouvrière de <strong>Poznań</strong> (juin 1956 — 74 morts) et la déstalinisation de Khrouchtchev permettent le retour de <strong>Władysław Gomułka</strong> au pouvoir. Il obtient de Moscou une relative autonomie. La collectivisation agricole est abandonnée, l'Église catholique tolérée. C'est le « dégel » — mais dans les limites du système.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1968 — Mars polonais</div>
+        <div class="tl-text">Le mouvement étudiant est réprimé. Une campagne antisémite officielle pousse 15 000 Juifs polonais à émigrer — éliminant presque toute la communauté juive survivante. Les intellectuels comme <strong>Adam Michnik</strong> sont emprisonnés.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1970 — Décembre sanglant</div>
+        <div class="tl-text">La hausse des prix alimentaires déclenche des grèves et manifestations à Gdańsk, Gdynia, Szczecin. L'armée tire sur les ouvriers : 44 morts officiels (probablement plus). <strong>Gomułka</strong> est renversé, remplacé par <strong>Edward Gierek</strong>, qui emprunte massivement à l'Ouest pour moderniser l'économie.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1976 — Radom et Ursus</div>
+        <div class="tl-text">Nouvelles grèves contre la hausse des prix. Réprimées, elles donnent naissance au <strong>KOR</strong> (Comité de défense des ouvriers), premier mouvement d'opposition légal, fondé par des intellectuels pour aider les ouvriers réprimés. C'est l'amorce de l'alliance intellectuels-ouvriers qui créera Solidarité.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">Jean-Paul II, Solidarność et la loi martiale</h3>
+    <div class="prose">
+      <p>Le <strong>16 octobre 1978</strong>, le cardinal de Cracovie <strong>Karol Wojtyła</strong> est élu pape sous le nom de <strong>Jean-Paul II</strong>. C'est un séisme. Pour la première fois depuis 455 ans, un non-Italien est pape — et c'est un Polonais, citoyen d'un pays communiste. Sa visite en Pologne en <strong>juin 1979</strong> rassemble 10 millions de personnes en neuf jours. Sa phrase « N'ayez pas peur ! » brise psychologiquement l'acceptation fataliste du système.</p>
+      <p>En <strong>juillet–août 1980</strong>, une nouvelle hausse des prix déclenche des grèves. Aux chantiers navals Lénine de Gdańsk, l'électricien <strong>Lech Wałęsa</strong> grimpe par-dessus une grille pour rejoindre les grévistes et prend la tête du mouvement. Les <strong>Accords de Gdańsk</strong> (31 août 1980) reconnaissent le droit syndical : c'est la création de <strong>Solidarność</strong>. En 16 mois, le syndicat compte <strong>10 millions de membres</strong> sur 38 millions de Polonais — plus un tiers de la population d'un pays communiste appartenant à un syndicat indépendant.</p>
+      <p>Le <strong>13 décembre 1981</strong>, à minuit, le général <strong>Wojciech Jaruzelski</strong> déclare la loi martiale. Des chars dans les rues, des internements (10 000 personnes dont Wałęsa), la coupure des communications. Dix mineurs sont tués à la mine de Wujek. Solidarité est dissoute. Mais elle survit dans la clandestinité, soutenue par l'Église, le Vatican et la CIA (Reagan finance massivement la résistance polonaise).</p>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Jean_Paul_II_au_Liban.jpg/320px-Jean_Paul_II_au_Liban.jpg" alt="Jean-Paul II" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">✝️</div>
+        <div class="person-body">
+          <div class="person-name">Jean-Paul II / Karol Wojtyła</div>
+          <div class="person-dates">1920 – 2005</div>
+          <div class="person-desc">264e pape. Acteur clandestin sous l'Occupation, prêtre, évêque, cardinal. Sa papauté (1978–2005) change l'histoire de la Pologne et du monde. Canonisé en 2014. Il survécut à un attentat en 1981.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Jean-Paul_II" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Lech_Walesa_1997.jpg/320px-Lech_Walesa_1997.jpg" alt="Wałęsa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">✊</div>
+        <div class="person-body">
+          <div class="person-name">Lech Wałęsa</div>
+          <div class="person-dates">né en 1943</div>
+          <div class="person-desc">Électricien aux chantiers navals de Gdańsk, fondateur de Solidarité, Prix Nobel de la Paix 1983, président de la Pologne 1990–1995. Sa moustache est devenue le symbole de la résistance ouvrière mondiale.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Lech_Wa%C5%82%C4%99sa" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ EP8 -->
+  <div class="quiz-section reveal" id="quiz-ep8">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — La République communiste</h3><span>7 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep8"></div></div>
+    <div id="qc-ep8"></div>
+    <div class="score-screen" id="ss-ep8">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep8">0</span><span class="score-d" id="sd-ep8">/7</span></div>
+      <p class="score-msg" id="sm-ep8"></p>
+      <button class="btn btn-ghost" onclick="restart('ep8')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">✦ ✦ ✦</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- IX DEMOCRATIE -->
+<section id="ep9" class="epoch"><div class="container">
+  <div class="epoch-banner reveal">
+    <div class="epoch-roman">IX</div>
+    <div class="epoch-info">
+      <h2>La IIIe République — La démocratie et l'intégration européenne</h2>
+      <span class="epoch-dates">1989 – aujourd'hui</span>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">La table ronde et la révolution de 1989</h3>
+    <div class="prose">
+      <p>En <strong>février 1989</strong>, sous la pression économique (la Pologne est en faillite) et politique, le gouvernement Jaruzelski accepte des négociations avec Solidarité. Les <strong>négociations de la Table ronde</strong> (6 février – 4 avril 1989) aboutissent à un accord historique : élections semi-libres (65% des sièges à la chambre basse réservés aux communistes, mais 100 sièges au Sénat librement disputés).</p>
+      <p>Le <strong>4 juin 1989</strong> — jour même de la répression de la place Tiananmen en Chine — les élections polonaises donnent une victoire écrasante à Solidarité : 99 des 100 sièges au Sénat, et tous les sièges disputables à la Chambre. C'est la fin du communisme. En <strong>août 1989</strong>, <strong>Tadeusz Mazowiecki</strong> devient Premier ministre — le premier chef de gouvernement non-communiste du bloc soviétique depuis 1948. La révolution en douceur polonaise inspire les autres pays d'Europe de l'Est. En quelques mois, tous les régimes communistes s'effondrent.</p>
+      <p><strong>Lech Wałęsa</strong> est élu président en décembre 1990. L'économie est libéralisée par la <strong>thérapie de choc</strong> du ministre Leszek Balcerowicz : libération des prix, privatisation, conversion en économie de marché. La transition est douloureuse (chômage, inflation) mais la Pologne s'en sort mieux que ses voisins.</p>
+    </div>
+
+    <div class="persons-grid">
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Tadeusz_Mazowiecki.jpg/320px-Tadeusz_Mazowiecki.jpg" alt="Mazowiecki" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">🏛️</div>
+        <div class="person-body">
+          <div class="person-name">Tadeusz Mazowiecki</div>
+          <div class="person-dates">1927 – 2013</div>
+          <div class="person-desc">Journaliste catholique et conseiller de Solidarité. Premier PM non-communiste du bloc soviétique (1989–1990). Architecte de la transition démocratique. Il contribua aussi à la Commission des droits de l'Homme de l'ONU.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Tadeusz_Mazowiecki" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+      <div class="person-card">
+        <img class="person-portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Donald_Tusk_2023.jpg/320px-Donald_Tusk_2023.jpg" alt="Tusk" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="person-portrait-placeholder" style="display:none">🏛️</div>
+        <div class="person-body">
+          <div class="person-name">Donald Tusk</div>
+          <div class="person-dates">né en 1957</div>
+          <div class="person-desc">Deux fois Premier ministre de Pologne (2007–2014 et depuis 2023). Président du Conseil européen (2014–2019). Chef du Parti populaire européen. Figure centrale de la politique polonaise et européenne.</div>
+          <a class="person-wiki" href="https://fr.wikipedia.org/wiki/Donald_Tusk" target="_blank">↗ Wikipedia</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <h3 class="section-title">L'intégration euro-atlantique et les défis contemporains</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1999 — OTAN</div>
+        <div class="tl-text">La Pologne rejoint l'Alliance atlantique avec la Hongrie et la République tchèque. C'est l'aboutissement d'une décennie de diplomatie. Pour la Pologne, traumatisée par l'histoire, c'est une garantie de sécurité fondamentale.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2004 — Union européenne</div>
+        <div class="tl-text">Le 1er mai, la Pologne intègre l'UE avec 9 autres pays. L'économie polonaise triple en vingt ans. L'émigration vers l'Ouest (surtout Royaume-Uni et Irlande) concerne un million de Polonais. Le PIB par habitant passe de 20% à 70% de la moyenne UE.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2010 — Catastrophe de Smolensk</div>
+        <div class="tl-text">Le 10 avril, l'avion du président <strong>Lech Kaczyński</strong> s'écrase près de Smolensk (Russie) par temps de brouillard. Les 96 passagers — dont le président, l'épouse présidentielle, des généraux, parlementaires et chefs religieux — périssent. L'avion se rendait à Katyń pour commémorer le 70e anniversaire du massacre. Cette catastrophe crée un traumatisme national et des théories complotistes persistantes sur une « responsabilité » russe.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2015–2023 — Le PiS et la crise de l'État de droit</div>
+        <div class="tl-text">Le parti national-conservateur <strong>PiS</strong> (Droit et Justice) des frères Kaczyński remporte les élections. Il engage une réforme controversée du système judiciaire — prise de contrôle du Tribunal constitutionnel, réforme de la Cour suprême — que l'UE juge incompatible avec l'État de droit. La Pologne est soumise à des procédures d'infraction et ses fonds européens sont gelés. Les tensions portent aussi sur les droits des femmes (quasi-interdiction de l'avortement, 2021) et les droits LGBT.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2022 — La guerre en Ukraine</div>
+        <div class="tl-text">L'invasion russe du 24 février 2022 confirme les craintes historiques polonaises. La Pologne devient le principal soutien militaire et humanitaire de l'Ukraine : 1,5 million de réfugiés ukrainiens accueillis, des milliards d'euros d'aide militaire. L'OTAN renforce massivement sa présence en Pologne.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023 — Retour de Tusk</div>
+        <div class="tl-text">Une coalition de centre et de gauche remporte les élections d'octobre 2023. Donald Tusk, ancien président du Conseil européen, forme un gouvernement et entreprend de « débloquer » les fonds européens gelés en réformant le système judiciaire.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ EP9 -->
+  <div class="quiz-section reveal" id="quiz-ep9">
+    <div class="quiz-header">
+      <div class="quiz-icon">✦</div>
+      <div><h3>QUIZ — La démocratie moderne</h3><span>6 questions sur cette période</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-ep9"></div></div>
+    <div id="qc-ep9"></div>
+    <div class="score-screen" id="ss-ep9">
+      <div class="score-title">RÉSULTAT</div>
+      <div class="score-ring"><span class="score-n" id="sn-ep9">0</span><span class="score-d" id="sd-ep9">/6</span></div>
+      <p class="score-msg" id="sm-ep9"></p>
+      <button class="btn btn-ghost" onclick="restart('ep9')">↺ Recommencer</button>
+    </div>
+  </div>
+
+</div></section>
+
+<div class="container"><div class="epoch-divider"><div class="epoch-divider-line"></div><div class="epoch-divider-ornament">★ QUIZ GLOBAL ★</div><div class="epoch-divider-line"></div></div></div>
+
+<!-- QUIZ GLOBAL -->
+<section id="quiz-global" style="padding: 80px 0;">
+<div class="container">
+  <div style="text-align:center; margin-bottom:50px;">
+    <p style="font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;">Épreuve finale</p>
+    <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:var(--parchment);margin-bottom:12px;">Quiz Global</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(244,237,216,0.55);font-size:1.1rem;">30 questions couvrant toute l'histoire de la Pologne</p>
+  </div>
+
+  <div class="quiz-section" id="quiz-glob" style="background:rgba(26,10,10,0.6);border-color:var(--gold);">
+    <div class="quiz-header">
+      <div class="quiz-icon" style="border-color:var(--gold);color:var(--gold);">★</div>
+      <div><h3 style="color:var(--gold-light);">QUIZ COMPLET — Histoire de la Pologne</h3><span id="glob-count">Toutes les questions des quiz de période + supplémentaires, mélangées</span></div>
+    </div>
+    <div class="quiz-progress"><div class="quiz-progress-fill" id="pf-glob"></div></div>
+    <div id="qc-glob"></div>
+    <div class="score-screen" id="ss-glob">
+      <div class="score-title">RÉSULTAT FINAL</div>
+      <div class="score-ring" style="border-color:var(--gold);"><span class="score-n" id="sn-glob">0</span><span class="score-d" id="sd-glob">/30</span></div>
+      <p class="score-msg" id="sm-glob"></p>
+      <button class="btn btn-primary" onclick="restart('glob')" style="background:var(--gold);color:var(--deep);">↺ Recommencer le quiz global</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Histoire exhaustive de la Pologne — Du VIe siècle à nos jours</p>
+  <p style="margin-top:8px;font-size:0.78rem;opacity:0.5">Sources : Wikipedia Commons, Encyclopædia Universalis, Jan Długosz, Norman Davies — <em>God's Playground</em></p>
+</footer>
+
+<script>
+// ═══════════════════ DONNÉES DES QUIZ ═══════════════════
+
+const QUIZZES = {
+  ep1: {
+    total: 6,
+    questions: [
+      {q:"Quel nom de tribu slave a donné son nom à la Pologne (Polska) ?",o:["Les Mazures","Les Kuyaves","Les Polanes","Les Lentiens"],a:2,e:"Les Polanes (« gens des plaines ») dominaient la région de Gniezno et donnèrent leur nom au pays."},
+      {q:"En quelle année Mieszko Ier reçut-il le baptême, acte fondateur de l'État polonais ?",o:["955","966","978","988"],a:1,e:"Le baptême du 14 avril 966 (probablement le jour de Pâques) ancre la Pologne dans la civilisation latine occidentale."},
+      {q:"Quelle princesse étrangère épousa Mieszko Ier avant sa conversion ?",o:["Helga de Norvège","Doubravka de Bohême","Richeza de Lotharingie","Emma de Normandie"],a:1,e:"Doubravka de Bohême, fille du duc Boleslav Ier, épousa Mieszko en 965, et sa conversion fut une condition du mariage."},
+      {q:"Pourquoi Mieszko Ier choisit-il le rite latin plutôt que byzantin ?",o:["L'Église romaine était plus riche","Il protégeait son État des croisades germaniques et s'ancrait dans l'Europe occidentale","Par imitation de la Bohême uniquement","Le pape lui avait envoyé des missionnaires"],a:1,e:"Le rite latin offrait une protection contre les croisades germaniques (on ne croise pas contre un peuple chrétien) et rattachait la Pologne à Rome plutôt qu'à Constantinople."},
+      {q:"Quel document (vers 990) place l'État de Mieszko sous protection directe du Saint-Siège ?",o:["La Bulle d'Or","Le Traité de Gniezno","Le Dagome iudex","La Charte de Kalisz"],a:2,e:"Le Dagome iudex est le premier acte d'État polonais connu ; il fait de Rome le garant de l'indépendance polonaise contre les prétentions germaniques."},
+      {q:"Quelle était la religion pratiquée par les Polanes avant le baptême de 966 ?",o:["Le christianisme orthodoxe","Le judaïsme","Un polythéisme slave avec Perun, Świętowit et Veles","L'islam"],a:2,e:"Les Slaves polonais vénéraient un panthéon de divinités dont Perun (tonnerre), Świętowit (guerre) et Veles (morts et troupeaux)."}
+    ]
+  },
+  ep2: {
+    total: 7,
+    questions: [
+      {q:"Lors de la rencontre de Gniezno (an 1000), que fit l'empereur Otton III pour Bolesław Ier ?",o:["Il lui déclara la guerre","Il posa sa couronne impériale sur sa tête et permit un archevêché indépendant","Il l'emprisonna","Il l'excommunia"],a:1,e:"L'acte symbolique d'Otton III reconnaissait Bolesław en quasi-égal et permettait la création d'un archevêché polonais autonome à Gniezno."},
+      {q:"En quelle année Bolesław Ier fut-il couronné roi de Pologne ?",o:["1000","1010","1025","1039"],a:2,e:"Bolesław Ier fut couronné roi de Pologne en 1025, peu avant sa mort, devenant ainsi le premier roi couronné de Pologne."},
+      {q:"Quel événement de 1138 fragmente le royaume polonais pour près de deux siècles ?",o:["Une invasion mongole","Le testament de Bolesław III Bouche-Torse divisant le royaume entre ses fils","La mort de l'archevêque de Gniezno","Une invasion allemande"],a:1,e:"Le testament de Bolesław III instaure la 'principauté séniorale' mais divise le royaume en principautés rivales — la fragmentation princière dure jusqu'en 1320."},
+      {q:"Lors de la première invasion mongole (1241), quelle bataille vit l'armée polonaise écrasée ?",o:["Bataille de Grunwald","Bataille de Legnica (Liegnitz)","Bataille de Cracovie","Bataille de Varsovie"],a:1,e:"Le 9 avril 1241, à Legnica (Silésie), les forces polono-allemandes du duc Henri II le Pieux furent anéanties par les Mongols de Batu Khan."},
+      {q:"Casimir III le Grand fonda l'Université de Cracovie en quelle année ?",o:["1320","1347","1364","1386"],a:2,e:"L'Académie de Cracovie (future Université Jagellonne), fondée en 1364, est l'une des plus anciennes d'Europe centrale. Elle fut restaurée par Jadwiga en 1400."},
+      {q:"Quelle expression résume le bilan de Casimir III le Grand selon le chroniqueur Długosz ?",o:["Il trouva une Pologne en or et la laissa en cendres","Il trouva une Pologne en bois et la laissa en pierre","Il trouva une Pologne en ruines et la laissa en fleurs","Il trouva une Pologne divisée et la laissa unie"],a:1,e:"Cette formule illustre la politique de construction massive — 53 châteaux, des villes fortifiées — entreprise par Casimir III."},
+      {q:"Quel événement attira des milliers de colons juifs en Pologne au XIIIe siècle ?",o:["L'invitation des rois polonais pour pratiquer le commerce","Les persécutions en Europe occidentale (croisades, légendes de meurtre rituel) et la protection accordée par les princes polonais","La richesse des terres agricoles polonaises","La tolérance de l'Église catholique polonaise"],a:1,e:"Les Juifs fuyant les persécutions en Europe occidentale trouvèrent en Pologne une protection relative. Casimir III confirma et étendit les Statuts de Kalisz (1264) qui garantissaient leurs droits."}
+    ]
+  },
+  ep3: {
+    total: 6,
+    questions: [
+      {q:"Quel traité (1385) prépara l'union dynastique polono-lituanienne en prévoyant la conversion de Jagellon ?",o:["Traité de Lublin","Traité de Krewo","Traité de Thorn","Traité de Varsovie"],a:1,e:"Le traité de Krewo (août 1385) prévoyait que Jagellon se convertirait, épouserait Jadwiga et 'incorporerait' ses terres lituaniennes à la couronne polonaise."},
+      {q:"La Lituanie était le dernier État officiellement pagien d'Europe lors de sa conversion en 1387. Quel argument cela retirait-il à l'Ordre Teutonique ?",o:["Son financement par le pape","Sa raison d'être : les croisades pour christianiser la Lituanie","Son accès à la mer Baltique","Ses alliés en Allemagne"],a:1,e:"L'Ordre Teutonique justifiait ses guerres en Lituanie par la mission de christianisation. La conversion lituanienne lui retirait cette justification."},
+      {q:"Quel fut le résultat de la bataille de Grunwald (15 juillet 1410) ?",o:["Une défaite polonaise décisive","Une victoire ottomane","Une victoire polono-lituanienne qui anéantit l'élite teutonique — le Grand Maître fut tué","Un match nul suivi de négociations"],a:2,e:"La victoire de Grunwald fut totale : le Grand Maître Ulrich von Jungingen et la plupart des hauts dignitaires de l'Ordre furent tués. C'est la plus grande victoire militaire de l'histoire médiévale polonaise."},
+      {q:"Quel astronome polonais publia en 1543 un traité révolutionnaire affirmant que la Terre tourne autour du Soleil ?",o:["Johannes Kepler","Tycho Brahe","Nicolas Copernic","Galilée"],a:2,e:"Nicolas Copernic (1473–1543), né à Toruń, publia son De revolutionibus orbium coelestium en 1543, révolution copernicienne qui changea la vision du cosmos."},
+      {q:"La Confédération de Varsovie (1573) était remarquable pour quelle raison ?",o:["Elle créait le premier parlement élu d'Europe","Elle garantissait la liberté de culte à toutes les confessions dans un contexte européen de guerres de religion","Elle abolissait le servage","Elle instaurait une monarchie héréditaire"],a:1,e:"Dans l'Europe déchirée par les guerres de religion (la Saint-Barthélemy venait d'avoir lieu en 1572 !), la Pologne garantissait la paix religieuse entre catholiques, protestants, orthodoxes et juifs."},
+      {q:"Quel fut l'impact de la seconde Paix de Thorn (1466) pour la Pologne ?",o:["La Pologne perdit la Silésie","La Pologne obtint la Prusse Royale (dont Gdańsk) et la suzeraineté sur la Prusse ducale","La Pologne signa la paix avec la Russie","La Pologne perdit Cracovie"],a:1,e:"La seconde Paix de Thorn mit fin à la Guerre des Treize Ans : la Pologne récupéra la Prusse Royale avec Gdańsk (accès à la mer Baltique) et établit sa suzeraineté sur la Prusse ducale."}
+    ]
+  },
+  ep4: {
+    total: 7,
+    questions: [
+      {q:"L'Union de Lublin (1569) créa quel type d'État original en Europe ?",o:["Une monarchie absolue centralisée","Une théocratie catholique","Une fédération polono-lituanienne à roi élu et parlement commun — la Rzeczpospolita","Un empire colonial"],a:2,e:"La Rzeczpospolita des Deux Nations était unique : fédération avec roi élu, Sejm commun, mais droits et armées distincts pour chaque partie. La noblesse représentait 8-10% de la population."},
+      {q:"Qu'est-ce que le liberum veto et quel fut son effet sur la Pologne ?",o:["Un droit royal de veto sur les lois","La capacité d'un seul noble à dissoudre le Sejm — 48 des 55 Sejm entre 1652 et 1764 furent dissous","Un traité de paix avec la Russie","Le droit des villes à s'opposer aux impôts"],a:1,e:"Le liberum veto (Nie pozwalam — Je m'y oppose) permit à des puissances étrangères de soudoyer des nobles pour paralyser les réformes, contribuant directement aux partages."},
+      {q:"Le 'Déluge suédois' (1655–1660) désigne quoi ?",o:["Une inondation catastrophique de la Vistule","L'invasion de la Pologne par la Suède de Charles X Gustave qui occupa presque tout le pays","Une guerre entre la Pologne et le Danemark","La colonisation suédoise de la Poméranie"],a:1,e:"Le Déluge suédois ravagea la Pologne : la population diminua d'un tiers. La résistance du monastère de Jasna Góra en fit un symbole national."},
+      {q:"Quel hetman cosaque déclencha en 1648 un soulèvement dévastateur contre la Pologne ?",o:["Ivan Mazepa","Bogdan Khmelnytsky","Piotr Sahaidachny","Severyn Nalyvaiko"],a:1,e:"Bogdan Khmelnytsky mena le soulèvement cosaque (1648–1654), causant des massacres de Polonais et de Juifs. En 1654, il se plaça sous protection russe — amorçant la perte de l'Ukraine pour la Pologne."},
+      {q:"Lors de quel siège en 1683 Jean III Sobieski sauva-t-il l'Europe de l'expansion ottomane ?",o:["Siège de Budapest","Siège de Belgrade","Siège de Vienne","Siège de Cracovie"],a:2,e:"Le 12 septembre 1683, la charge des hussards ailés polonais lors du siège de Vienne fut décisive. C'est la plus grande charge de cavalerie de l'histoire — et la dernière grande victoire polonaise avant le déclin."},
+      {q:"Combien de membres représentait la noblesse (szlachta) dans la population polonaise ?",o:["1-2% comme en France","8-10%","20%","Moins de 0,5%"],a:1,e:"La noblesse polonaise représentait 8-10% de la population (contre 1-2% en France), ce qui lui donnait un poids politique considérable dans la démocratie nobiliaire."},
+      {q:"Quel monastère résista miraculement au siège suédois de 1655, devenant un symbole national ?",o:["Abbaye de Tyniec","Monastère de Jasna Góra (Częstochowa)","Cathédrale de Wawel","Monastère de Lubiń"],a:1,e:"Le monastère de Jasna Góra, défendu par 160 hommes contre 3 000 Suédois du 18 novembre au 26 décembre 1655, résista miraculeusement. Jean II Casimir proclama alors la Vierge Reine de Pologne."}
+    ]
+  },
+  ep5: {
+    total: 8,
+    questions: [
+      {q:"En combien d'étapes la Pologne fut-elle démembrée entre 1772 et 1795 ?",o:["Deux","Trois","Quatre","Une seule"],a:1,e:"Les trois partages eurent lieu en 1772, 1793 et 1795, impliquant la Russie (Catherine II), la Prusse (Frédéric II) et l'Autriche (Marie-Thérèse puis Joseph II)."},
+      {q:"La Constitution du 3 mai 1791 fut la première constitution moderne d'Europe. Qu'abolissait-elle notamment ?",o:["La monarchie","Le parlement","Le liberum veto et instaurait une monarchie héréditaire constitutionnelle","L'Église catholique"],a:2,e:"Adoptée le 3 mai 1791, elle était la deuxième au monde après la Constitution américaine (1787). Elle abolissait le liberum veto et modernisait l'État — trop tard pour empêcher les partages."},
+      {q:"Dans quel conflit américain Tadeusz Kościuszko s'était-il illustré avant de mener l'insurrection de 1794 ?",o:["La guerre de Sécession","La guerre franco-indienne","La guerre d'Indépendance américaine","La guerre de 1812"],a:2,e:"Kościuszko servit comme ingénieur militaire dans l'armée continentale américaine, contribuant notamment à la victoire cruciale de Saratoga (1777) et à la construction de West Point."},
+      {q:"Napoléon créa quel État polonais satellite entre 1807 et 1815 ?",o:["Le Royaume de Pologne","La République de Varsovie","Le Duché de Varsovie","La Confédération polonaise"],a:2,e:"Le Duché de Varsovie (1807–1815) fut créé par les traités de Tilsit. Il raviva l'espoir national et fournit 100 000 soldats à la Grande Armée, notamment lors de la campagne de Russie."},
+      {q:"L'insurrection de Novembre (1830-1831) fut déclenchée par quelle crainte des officiers polonais ?",o:["L'annexion de Varsovie par la Russie","Être envoyés réprimer des révolutions en France et en Belgique","L'interdiction de la langue polonaise","La suppression de l'armée polonaise"],a:1,e:"Les officiers-cadets craignaient que l'armée du Royaume du Congrès soit utilisée pour réprimer les révolutions libérales en France et en Belgique (1830)."},
+      {q:"Quel célèbre compositeur polonais exila son cœur en Pologne après sa mort à Paris ?",o:["Ignacy Paderewski","Henryk Wieniawski","Frédéric Chopin","Karol Szymanowski"],a:2,e:"Frédéric Chopin mourut à Paris en 1849. Selon ses vœux, son cœur fut retiré et rapporté en Pologne, où il est conservé dans une colonne de l'église Sainte-Croix de Varsovie."},
+      {q:"Quel grand poète polonais écrivit l'épopée nationale Pan Tadeusz depuis son exil à Paris ?",o:["Juliusz Słowacki","Zygmunt Krasiński","Adam Mickiewicz","Cyprian Kamil Norwid"],a:2,e:"Adam Mickiewicz écrivit Pan Tadeusz en 1834 à Paris. Cette épopée en vers, qui débute par 'Lituanie, ma patrie...', est considérée comme l'œuvre fondatrice de la littérature nationale polonaise."},
+      {q:"Sous quelle occupation la Pologne bénéficia-t-elle d'une relative autonomie culturelle après 1867, faisant de cette région le 'Piémont polonais' ?",o:["L'occupation russe","L'occupation prussienne","L'occupation autrichienne (Galicie)","Aucune — toutes les occupations étaient également brutales"],a:2,e:"La Galicie autrichienne obtint une large autonomie après le compromis austro-hongrois de 1867. Les universités de Cracovie et Lwów fonctionnaient en polonais, et une vie culturelle polonaise s'y épanouissait."}
+    ]
+  },
+  ep6: {
+    total: 6,
+    questions: [
+      {q:"Quel événement simultané dans trois empires permit l'indépendance polonaise en novembre 1918 ?",o:["La fin de la Première Guerre mondiale et l'effondrement des empires russe, austro-hongrois et allemand","La Révolution russe de 1917 uniquement","La déclaration de Wilson des 14 Points","Un soulèvement armé polonais victorieux"],a:0,e:"L'effondrement simultané des trois empires occupants (russe en 1917, austro-hongrois et allemand en novembre 1918) ouvrit la fenêtre historique unique pour la renaissance polonaise."},
+      {q:"La bataille de Varsovie (août 1920) est surnommée le 'Miracle sur la Vistule'. Qui voulait conquérir Varsovie ?",o:["L'Allemagne de Weimar","L'Armée rouge soviétique de Toukhatchevski","Les forces ukrainiennes","La Lituanie"],a:1,e:"L'Armée rouge de Toukhatchevski voulait porter la révolution en Allemagne en traversant la Pologne. Piłsudski encercla ses forces par une manœuvre de flanc brillante : 66 000 prisonniers, victoire totale."},
+      {q:"En quelle année Piłsudski effectua-t-il son coup d'État dit 'coup de mai' ?",o:["1920","1923","1926","1930"],a:2,e:"Le coup de mai 1926 : les troupes de Piłsudski marchèrent sur Varsovie, 379 morts dans les combats de rues. Piłsudski s'empara du pouvoir de facto, instaurant le régime autoritaire de la Sanacja."},
+      {q:"Quel pacte du 23 août 1939 scella le sort de la Pologne en divisant l'Europe de l'Est ?",o:["Le Traité de Versailles","L'Accord de Munich","Le Pacte Molotov-Ribbentrop","Le Pacte de Varsovie"],a:2,e:"Le pacte Molotov-Ribbentrop (et son protocole secret) divisa l'Europe de l'Est en zones d'influence soviétique et allemande. La Pologne était condamnée."},
+      {q:"Le point 13 des 14 Points du président Wilson (1918) prévoyait quoi pour la Pologne ?",o:["Une autonomie au sein de l'empire russe","La création d'un État polonais indépendant avec accès à la mer","L'annexion à l'Autriche","Un protectorat franco-britannique"],a:1,e:"Le 13e point de Wilson prévoyait explicitement 'un État polonais indépendant, comprenant les territoires habités par des populations incontestablement polonaises, avec libre accès à la mer.'"},
+      {q:"Quel musicien polonais de renommée mondiale fut aussi le premier Premier ministre de la Pologne indépendante en 1919 ?",o:["Frédéric Chopin","Arthur Rubinstein","Ignacy Jan Paderewski","Karol Szymanowski"],a:2,e:"Ignacy Jan Paderewski, pianiste de génie internationalement célèbre, fut Premier ministre et ministre des Affaires étrangères en 1919. Sa notoriété mondiale lui permit de plaider la cause polonaise auprès de Wilson."}
+    ]
+  },
+  ep7: {
+    total: 8,
+    questions: [
+      {q:"En quelle date précise l'Allemagne nazie envahit-elle la Pologne, déclenchant la Seconde Guerre mondiale ?",o:["3 septembre 1939","1er septembre 1939","17 septembre 1939","23 août 1939"],a:1,e:"Le 1er septembre 1939 à 4h45, la Wehrmacht franchit la frontière polonaise. Le bombardement de Westerplatte à Gdańsk est souvent cité comme le premier acte de la guerre."},
+      {q:"Le massacre de Katyń (1940) fut perpétré par qui contre qui ?",o:["Les nazis contre les Juifs polonais","Le NKVD soviétique contre ~22 000 officiers et intellectuels polonais","Les SS contre des prisonniers soviétiques","L'armée polonaise contre des collaborateurs"],a:1,e:"Staline approuva personnellement l'exécution de 21 857 citoyens polonais (officiers, policiers, intellectuels) dans les forêts de Katyń, Kalinine et Kharkiv. Nié par l'URSS jusqu'en 1990."},
+      {q:"Quel pourcentage des Juifs polonais (3,3 millions) fut assassiné pendant la Shoah ?",o:["Environ 30%","Environ 60%","Environ 90%","Environ 50%"],a:2,e:"Environ 90% des Juifs polonais — soit près de 3 millions de personnes — furent assassinés, principalement dans les camps d'extermination construits sur le sol polonais."},
+      {q:"Quel camp d'extermination nazi, construit en Pologne occupée, fut le plus meurtrier avec ~1,1 million de victimes ?",o:["Treblinka","Sobibor","Majdanek","Auschwitz-Birkenau"],a:3,e:"Auschwitz-Birkenau fut le plus grand camp d'extermination : ~1,1 million de victimes. Treblinka : ~900 000. Bełżec : ~500 000. L'ensemble de l'Opération Reinhard tua ~1,7 million de personnes."},
+      {q:"Qui commandait le soulèvement du ghetto de Varsovie (avril-mai 1943) ?",o:["Emmanuel Ringelblum","Mordechai Anielewicz","Marek Edelman","Jan Karski"],a:1,e:"Mordechai Anielewicz (24 ans) commandait le ZOB (Organisation combattante juive). Il mourut dans son bunker du 18 rue Mila. Le soulèvement dura du 19 avril au 16 mai 1943."},
+      {q:"Pourquoi l'insurrection de Varsovie (août-octobre 1944) fut-elle une tragédie politique en plus d'une catastrophe militaire ?",o:["L'armée polonaise refusa de se battre","L'Armée rouge de Staline attendit délibérément sur l'autre rive sans intervenir, laissant les nazis écraser les insurgés","Les Alliés occidentaux envoyèrent des troupes mais arrivèrent trop tard","Hitler négocia avec les insurgés"],a:1,e:"Staline laissa délibérément les nazis écraser l'insurrection : il ne voulait pas d'une Pologne libre gouvernée par le gouvernement en exil londonien. 200 000 civils moururent, Varsovie fut rasée à 85%."},
+      {q:"Witold Pilecki accomplit quelle action extraordinaire à Auschwitz ?",o:["Il s'évada et devint général","Il se fit volontairement déporter pour espionner le camp et en rapporter des témoignages","Il organisa une révolte des prisonniers","Il sauva 300 Juifs en les faisant passer pour des ouvriers"],a:1,e:"Pilecki se fit volontairement arrêter et déporter à Auschwitz en 1940 pour y créer un réseau de résistance et transmettre des rapports sur les atrocités. Il s'évada en 1943. Fusillé par les communistes en 1948."},
+      {q:"La conférence de Wannsee (janvier 1942) planifiait quoi ?",o:["L'invasion de l'URSS","La capitulation de l'Allemagne nazie","La 'Solution finale' — l'extermination systématique des Juifs d'Europe","L'occupation de la France"],a:2,e:"La conférence de Wannsee (20 janvier 1942) réunit 15 hauts fonctionnaires nazis pour coordonner la mise en œuvre de la 'Solution finale de la question juive' — le génocide des Juifs d'Europe."}
+    ]
+  },
+  ep8: {
+    total: 7,
+    questions: [
+      {q:"Les accords de Yalta (1945) livrèrent la Pologne à quelle puissance ?",o:["Les États-Unis","Le Royaume-Uni","L'URSS de Staline","La France"],a:2,e:"À Yalta (février 1945), Roosevelt et Churchill acceptèrent de facto la domination soviétique sur la Pologne en échange de la participation soviétique à la guerre contre le Japon."},
+      {q:"La révolte ouvrière de Poznań (juin 1956) causa combien de morts ?",o:["12","74","230","Aucun — elle fut pacifique"],a:1,e:"La répression de la révolte de Poznań fit 74 morts officiels. Elle déclencha le 'dégel' et le retour de Gomułka au pouvoir, qui obtint de Moscou une relative autonomie."},
+      {q:"En quelle année et dans quelle circonstance Jean-Paul II fut-il élu pape ?",o:["1975 — à la mort de Paul VI","1978 — après la mort mystérieuse de Jean-Paul Ier après 33 jours de pontificat","1980 — pour soutenir Solidarité","1983 — après son attentat"],a:1,e:"Jean-Paul II fut élu le 16 octobre 1978, après le décès soudain de Jean-Paul Ier (33 jours de pontificat). C'était le premier pape non-italien depuis 455 ans."},
+      {q:"Le syndicat Solidarność (Solidarité) fut fondé à la suite de grèves dans quelle ville en 1980 ?",o:["Varsovie","Cracovie","Gdańsk (chantiers navals Lénine)","Łódź"],a:2,e:"Les Accords de Gdańsk (31 août 1980), signés aux chantiers navals Lénine, reconnurent le droit syndical. Solidarité atteignit 10 millions de membres en 16 mois."},
+      {q:"Qui déclara la loi martiale en Pologne le 13 décembre 1981 ?",o:["Edward Gierek","Władysław Gomułka","Wojciech Jaruzelski","Stanisław Kania"],a:2,e:"Le général Jaruzelski instaura la loi martiale à minuit le 13 décembre 1981. Des chars dans les rues, 10 000 internements, coupure des communications. Dix mineurs furent tués à la mine de Wujek."},
+      {q:"Le KOR (Comité de défense des ouvriers, 1976) fut important car il réalisa quelle alliance inédite ?",o:["Alliance entre l'Église et l'armée","Alliance entre les intellectuels et les ouvriers, préfigurant Solidarité","Alliance entre la Pologne et la Tchécoslovaquie","Alliance entre les paysans et les nobles"],a:1,e:"Le KOR, fondé par des intellectuels (dont Adam Michnik) pour défendre les ouvriers réprimés après les grèves de 1976, créa l'alliance intellectuels-ouvriers qui permit ensuite la naissance de Solidarité."},
+      {q:"Quel célèbre officier polonais se fit déporter volontairement à Auschwitz, fut exécuté en 1948 par les communistes et canonisé en 2023 ?",o:["Tadeusz Bór-Komorowski","Witold Pilecki","Władysław Anders","Stefan Rowecki"],a:1,e:"Witold Pilecki, qui s'était volontairement fait déporter à Auschwitz pour espionner le camp, combattit ensuite à l'insurrection de Varsovie (1944). Arrêté par les communistes, torturé et fusillé en 1948."}
+    ]
+  },
+  ep9: {
+    total: 6,
+    questions: [
+      {q:"Les négociations de la Table ronde (1989) aboutirent à quelles élections historiques ?",o:["Des élections totalement libres","Des élections semi-libres où 65% des sièges étaient réservés aux communistes mais le Sénat librement disputé","Un référendum sur le communisme","Des élections municipales seulement"],a:1,e:"L'accord prévoyait des élections semi-libres le 4 juin 1989 : 65% des sièges à la chambre basse réservés aux communistes, mais 100 sièges au Sénat librement contestés. Solidarité remporta 99 des 100 sièges au Sénat."},
+      {q:"En quelle année la Pologne rejoignit-elle l'Alliance atlantique (OTAN) ?",o:["1991","1995","1999","2004"],a:2,e:"La Pologne intégra l'OTAN le 12 mars 1999 avec la Hongrie et la République tchèque. Ce fut l'aboutissement d'une décennie de diplomatie et une garantie de sécurité fondamentale pour un pays traumatisé par l'histoire."},
+      {q:"La catastrophe aérienne de Smolensk (10 avril 2010) tua quel président polonais, et où l'avion se rendait-il ?",o:["Aleksander Kwaśniewski, pour une visite officielle à Moscou","Lech Kaczyński, pour commémorer le massacre de Katyń","Bronisław Komorowski, pour une conférence de l'OTAN","Donald Tusk, pour une réunion du Conseil européen"],a:1,e:"Le président Lech Kaczyński et 95 autres personnalités périrent. L'avion se rendait à Katyń pour le 70e anniversaire du massacre soviétique des officiers polonais — une tragique ironie historique."},
+      {q:"Quelle politique économique radicale permit à la Pologne de tripler son PIB en vingt ans après 1989 ?",o:["Un socialisme de marché graduel","La thérapie de choc du ministre Leszek Balcerowicz : libération des prix, privatisation, économie de marché","Des prêts massifs du FMI sans réformes","La nationalisation des industries clés"],a:1,e:"La thérapie de choc de Balcerowicz fut douloureuse à court terme (chômage, inflation) mais permit une transformation économique rapide. La Pologne devint la seule économie de l'UE à ne pas entrer en récession lors de la crise de 2008."},
+      {q:"Quelle crise politique opposa la Pologne (gouvernement PiS) à l'Union européenne entre 2015 et 2023 ?",o:["Le refus d'accueillir des réfugiés","La réforme controversée du système judiciaire jugée incompatible avec l'État de droit","La sortie de la zone euro","L'alliance avec la Russie"],a:1,e:"Le gouvernement PiS prit le contrôle du Tribunal constitutionnel et réforma la Cour suprême, permettant au parlement de contrôler les juges. L'UE gela des milliards d'euros de fonds européens en réponse."},
+      {q:"Quel rôle la Pologne joua-t-elle après l'invasion russe de l'Ukraine (février 2022) ?",o:["Elle resta neutre pour préserver ses relations commerciales","Elle devint le principal soutien militaire et humanitaire de l'Ukraine (1,5 million de réfugiés, aide militaire massive)","Elle rejoignit la Russie pour des raisons historiques","Elle ferma ses frontières aux réfugiés ukrainiens"],a:1,e:"La Pologne fut le premier soutien de l'Ukraine : 1,5 million de réfugiés accueillis, transferts massifs d'armes, et principale plateforme logistique pour l'aide occidentale. Les craintes historiques face à la Russie galvanisèrent la solidarité polonaise."}
+    ]
+  }
+};
+
+// ─── QUIZ GLOBAL (30 questions, 1 par période min) ───
+const GLOBAL_QUESTIONS = [
+  {q:"En quelle année Mieszko Ier reçut-il le baptême ?",o:["955","966","978","988"],a:1,e:"Le baptême de 966 est l'acte fondateur de l'État polonais chrétien."},
+  {q:"Quelle tribu slave donna son nom à la Pologne ?",o:["Les Mazures","Les Kuyaves","Les Polanes","Les Poméraniens"],a:2,e:"Les Polanes (gens des plaines) dominaient la région de Gniezno."},
+  {q:"Bolesław Ier le Vaillant fut couronné premier roi de Pologne en quelle année ?",o:["1000","1010","1025","1039"],a:2,e:"Bolesław Ier fut couronné roi de Pologne en 1025, peu avant sa mort."},
+  {q:"La fragmentation princière débuta en 1138 suite au testament de quel roi ?",o:["Casimir II","Bolesław III Bouche-Torse","Mieszko II","Ladislas Ier"],a:1,e:"Le testament de Bolesław III divisa le royaume entre ses fils, inaugurant ~180 ans de fragmentation."},
+  {q:"Casimir III le Grand fonda l'Université de Cracovie en quelle année ?",o:["1320","1347","1364","1400"],a:2,e:"L'Académie de Cracovie (1364), future Université Jagellonne, est l'une des plus anciennes d'Europe centrale."},
+  {q:"Le mariage de Jadwiga et Jagellon (1386) créa l'union entre la Pologne et quel autre État ?",o:["La Bohême","La Hongrie","La Lituanie","L'Ukraine"],a:2,e:"Ce mariage créa l'union polono-lituanienne ; la Lituanie, dernier État pagien d'Europe, se convertit au christianisme."},
+  {q:"La bataille de Grunwald (15 juillet 1410) opposa les forces polono-lituaniennes à quel ennemi ?",o:["L'Empire Ottoman","Les Chevaliers Teutoniques","Le Tsarat de Russie","Le Saint Empire"],a:1,e:"La victoire de Grunwald mit fin à l'expansionnisme de l'Ordre Teutonique. Le Grand Maître Ulrich von Jungingen y fut tué."},
+  {q:"Quel astronome polonais publia la théorie héliocentrique en 1543 ?",o:["Kepler","Tycho Brahe","Nicolas Copernic","Galilée"],a:2,e:"Nicolas Copernic (1473–1543), né à Toruń, publia son De revolutionibus affirmant que la Terre tourne autour du Soleil."},
+  {q:"La Confédération de Varsovie (1573) était remarquable pour sa garantie de quelle liberté ?",o:["Liberté de presse","Liberté de culte pour toutes confessions","Liberté de commerce","Liberté de circulation"],a:1,e:"Dans une Europe déchirée par les guerres de religion, la Pologne garantissait la paix religieuse — fait unique en Europe."},
+  {q:"Le 'Déluge suédois' (1655-1660) vit quel pays envahir presque toute la Pologne ?",o:["Le Danemark","La Norvège","La Suède","La Finlande"],a:2,e:"La Suède de Charles X Gustave occupa presque tout le pays. La résistance du monastère de Jasna Góra devint un mythe national."},
+  {q:"Jean III Sobieski arrêta l'expansion ottomane lors de quel siège en 1683 ?",o:["Siège de Prague","Siège de Vienne","Siège de Budapest","Siège de Belgrade"],a:1,e:"La charge des hussards ailés polonais lors du siège de Vienne le 12 septembre 1683 fut décisive et arrêta définitivement l'expansion ottomane."},
+  {q:"Combien de partages la Pologne subit-elle entre 1772 et 1795 ?",o:["Deux","Trois","Quatre","Un"],a:1,e:"Les trois partages de 1772, 1793 et 1795 impliquèrent la Russie, la Prusse et l'Autriche. La Pologne disparut de la carte pour 123 ans."},
+  {q:"La Constitution du 3 mai 1791 fut remarquable car elle était la première constitution moderne de quel périmètre ?",o:["D'Asie","D'Europe (deuxième au monde après les USA)","D'Afrique","Du monde entier"],a:1,e:"Adoptée en 1791, elle était la première constitution moderne d'Europe et la deuxième du monde après la Constitution américaine de 1787."},
+  {q:"Tadeusz Kościuszko avait combattu dans quel conflit avant de mener l'insurrection polonaise de 1794 ?",o:["La Révolution française","La guerre d'Indépendance américaine","La guerre russo-turque","La guerre des Sept Ans"],a:1,e:"Kościuszko servit comme ingénieur militaire dans l'armée américaine, contribuant notamment à la victoire de Saratoga (1777)."},
+  {q:"Quel poète écrivit l'épopée nationale Pan Tadeusz depuis son exil à Paris ?",o:["Słowacki","Krasiński","Adam Mickiewicz","Norwid"],a:2,e:"Adam Mickiewicz écrivit Pan Tadeusz en 1834 à Paris. C'est l'œuvre fondatrice de la littérature nationale polonaise."},
+  {q:"La bataille de Varsovie d'août 1920 fut surnommée le 'Miracle sur la Vistule'. Qui voulait traverser la Pologne pour porter la révolution en Europe ?",o:["L'armée allemande","L'Armée rouge soviétique de Toukhatchevski","Les forces ukrainiennes","L'armée autrichienne"],a:1,e:"Piłsudski encercla l'Armée rouge par une brillante manœuvre de flanc, capturant 66 000 soldats soviétiques et stoppant la révolution bolchevique vers l'Ouest."},
+  {q:"En quelle année Piłsudski effectua-t-il son coup d'État pour instaurer le régime de Sanacja ?",o:["1920","1923","1926","1930"],a:2,e:"Le coup de mai 1926 : Piłsudski marcha sur Varsovie avec ses troupes (379 morts). Il contrôla de facto le pays jusqu'à sa mort en 1935."},
+  {q:"Le pacte Molotov-Ribbentrop (23 août 1939) scella le sort de la Pologne. Qu'organisait son protocole secret ?",o:["Une alliance militaire germano-soviétique","Un partage de l'Europe de l'Est en zones d'influence allemande et soviétique","Un traité commercial","Un accord de non-agression uniquement"],a:1,e:"Le protocole secret assignait la Pologne, les États baltes, la Finlande et la Bessarabie comme zones d'influence soviétique, et l'Europe centrale et occidentale comme zone allemande."},
+  {q:"En quelle date l'Allemagne envahit-elle la Pologne, déclenchant la Seconde Guerre mondiale ?",o:["3 septembre 1939","1er septembre 1939","17 septembre 1939","23 août 1939"],a:1,e:"Le 1er septembre 1939 à 4h45, la Wehrmacht franchit la frontière polonaise. Le 3 septembre, la France et le Royaume-Uni déclarèrent la guerre à l'Allemagne."},
+  {q:"Le massacre de Katyń (1940) fut perpétré par qui ?",o:["Les nazis","Le NKVD soviétique sur ordre de Staline","L'armée ukrainienne","Des partisans polonais anticommunistes"],a:1,e:"Staline ordonna personnellement l'exécution de ~22 000 officiers et intellectuels polonais. L'URSS nia ce crime jusqu'en 1990."},
+  {q:"Quel camp d'extermination nazi en Pologne fut le plus meurtrier ?",o:["Treblinka","Sobibor","Majdanek","Auschwitz-Birkenau"],a:3,e:"Auschwitz-Birkenau : ~1,1 million de victimes dont ~1 million de Juifs. Treblinka : ~900 000. Bełżec : ~500 000. Au total, 90% des Juifs polonais (3 millions) furent assassinés."},
+  {q:"L'insurrection de Varsovie (août-octobre 1944) dura combien de jours ?",o:["21 jours","45 jours","63 jours","90 jours"],a:2,e:"L'insurrection dura 63 jours (1er août – 2 octobre 1944). 40 000 combattants, 200 000 civils tués, Varsovie rasée à 85%. L'Armée rouge attendit sans intervenir."},
+  {q:"Les accords de Yalta (1945) livrèrent la Pologne à l'influence de quelle puissance ?",o:["Les États-Unis","Le Royaume-Uni","L'URSS","La France"],a:2,e:"À Yalta, Roosevelt et Churchill acceptèrent de facto la domination soviétique sur la Pologne. Les frontières furent redessinées, la Pologne perdant ses territoires orientaux."},
+  {q:"Jean-Paul II fut élu pape en quelle année, et de quelle nationalité était-il ?",o:["1975, tchèque","1978, polonais","1980, hongrois","1983, slovaque"],a:1,e:"Jean-Paul II (Karol Wojtyła) fut élu le 16 octobre 1978 — premier pape polonais et premier non-italien depuis 455 ans. Son élection fut un choc psychologique pour la Pologne communiste."},
+  {q:"Solidarność fut fondé en 1980 à Gdańsk. Combien de membres compta-t-il en 16 mois ?",o:["1 million","5 millions","10 millions","15 millions"],a:2,e:"Solidarité atteignit 10 millions de membres en 16 mois — soit un quart de la population polonaise appartenant à un syndicat indépendant dans un pays communiste."},
+  {q:"Qui déclara la loi martiale en Pologne le 13 décembre 1981 ?",o:["Gomułka","Gierek","Jaruzelski","Kania"],a:2,e:"Le général Jaruzelski instaura la loi martiale à minuit. Des chars, 10 000 internements, Wałęsa emprisonné. Dix mineurs furent tués à la mine de Wujek."},
+  {q:"Lors des élections du 4 juin 1989, Solidarité remporta combien de sièges au Sénat sur 100 ?",o:["45","75","89","99"],a:3,e:"Solidarité remporta 99 des 100 sièges au Sénat. Ce triomphe électoral déclencha la chute du communisme en Pologne, puis dans toute l'Europe de l'Est."},
+  {q:"En quelle année la Pologne adhéra-t-elle à l'Union européenne ?",o:["1999","2002","2004","2007"],a:2,e:"Le 1er mai 2004, la Pologne intégra l'UE avec 9 autres pays. Son économie tripla en vingt ans, passant de 20% à ~70% de la moyenne UE par habitant."},
+  {q:"La catastrophe de Smolensk (2010) tua quel président polonais ?",o:["Donald Tusk","Bronisław Komorowski","Lech Kaczyński","Aleksander Kwaśniewski"],a:2,e:"Le président Lech Kaczyński et 95 personnalités périrent le 10 avril 2010. L'avion se rendait à Katyń pour le 70e anniversaire du massacre — une ironie tragique de l'histoire."},
+  {q:"Quel rôle la Pologne joua-t-elle après l'invasion russe de l'Ukraine en 2022 ?",o:["Neutralité stricte","Principal soutien militaire et humanitaire de l'Ukraine (1,5M réfugiés, aide militaire massive)","Médiation entre l'Ukraine et la Russie","Refus d'impliquer l'OTAN"],a:1,e:"La Pologne devint le principal soutien de l'Ukraine : 1,5 million de réfugiés, transferts massifs d'armes, plateforme logistique majeure. Les traumatismes historiques face à la Russie galvanisèrent la solidarité polonaise."}
+];
+
+// ═══════════════════ MOTEUR DE QUIZ ═══════════════════
+
+const state = {};
+
+function initQuiz(id, questions) {
+  state[id] = { cur: 0, score: 0, ans: new Array(questions.length).fill(undefined), questions };
+  buildCards(id);
+}
+
+function buildCards(id) {
+  const s = state[id];
+  const container = document.getElementById('qc-' + id);
+  if (!container) return;
+  container.innerHTML = '';
+  const L = ['A','B','C','D'];
+  s.questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'q-card' + (i === 0 ? ' active' : '');
+    div.id = 'qcard-' + id + '-' + i;
+    div.innerHTML = `
+      <div class="q-meta">
+        <span class="q-counter">QUESTION ${i+1} / ${s.questions.length}</span>
+        <span class="q-cat">Histoire</span>
+      </div>
+      <div class="q-text">${q.q}</div>
+      <div class="q-options">
+        ${q.o.map((opt, j) => `
+          <button class="q-opt" onclick="answer('${id}',${i},${j})" id="opt-${id}-${i}-${j}">
+            <span class="q-letter">${L[j]}</span>${opt}
+          </button>`).join('')}
+      </div>
+      <div class="q-explain" id="exp-${id}-${i}">${q.e}</div>
+      <div class="q-nav">
+        <button class="btn btn-ghost" onclick="prevQ('${id}')" ${i===0?'disabled':''}>← Préc.</button>
+        <span style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--gold);opacity:0.6">${i+1}/${s.questions.length}</span>
+        <button class="btn btn-primary" onclick="nextQ('${id}')" id="nbtn-${id}-${i}" disabled>
+          ${i===s.questions.length-1?'Résultat →':'Suivant →'}
+        </button>
+      </div>`;
+    container.appendChild(div);
+  });
+  updateProgress(id);
+}
+
+function answer(id, qi, sel) {
+  const s = state[id];
+  if (s.ans[qi] !== undefined) return;
+  s.ans[qi] = sel;
+  const q = s.questions[qi];
+  ['A','B','C','D'].forEach((_, j) => {
+    const btn = document.getElementById('opt-' + id + '-' + qi + '-' + j);
+    if (!btn) return;
+    btn.disabled = true;
+    if (j === q.a) btn.classList.add('ok');
+    else if (j === sel && j !== q.a) btn.classList.add('no');
+  });
+  if (sel === q.a) s.score++;
+  const exp = document.getElementById('exp-' + id + '-' + qi);
+  if (exp) exp.classList.add('show');
+  const nb = document.getElementById('nbtn-' + id + '-' + qi);
+  if (nb) nb.disabled = false;
+  updateProgress(id);
+}
+
+function nextQ(id) {
+  const s = state[id];
+  if (s.cur < s.questions.length - 1) {
+    document.getElementById('qcard-' + id + '-' + s.cur).classList.remove('active');
+    s.cur++;
+    document.getElementById('qcard-' + id + '-' + s.cur).classList.add('active');
+    scrollToQuiz(id);
+  } else {
+    showScore(id);
+  }
+}
+
+function prevQ(id) {
+  const s = state[id];
+  if (s.cur > 0) {
+    document.getElementById('qcard-' + id + '-' + s.cur).classList.remove('active');
+    s.cur--;
+    document.getElementById('qcard-' + id + '-' + s.cur).classList.add('active');
+    scrollToQuiz(id);
+  }
+}
+
+function scrollToQuiz(id) {
+  const el = document.getElementById('quiz-' + id) || document.getElementById('quiz-glob');
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function updateProgress(id) {
+  const s = state[id];
+  const done = s.ans.filter(x => x !== undefined).length;
+  const pct = (done / s.questions.length) * 100;
+  const fill = document.getElementById('pf-' + id);
+  if (fill) fill.style.width = pct + '%';
+}
+
+function restart(id) {
+  const container = document.getElementById('qc-' + id);
+  const screen = document.getElementById('ss-' + id);
+  if (container) container.style.display = 'block';
+  if (screen) screen.style.display = 'none';
+  const qs = id === 'glob' ? buildGlobalQuestions() : QUIZZES[id].questions;
+  initQuiz(id, qs);
+}
+
+function buildGlobalQuestions() {
+  // Collect all period questions
+  const allPeriod = Object.keys(QUIZZES).reduce((acc, id) => {
+    return acc.concat(QUIZZES[id].questions.map(q => ({...q, _src: id})));
+  }, []);
+  // Add extra global-only questions (those not already in period quizzes)
+  const extra = GLOBAL_QUESTIONS.filter(gq =>
+    !allPeriod.some(pq => pq.q === gq.q)
+  );
+  const combined = allPeriod.concat(extra);
+  // Shuffle
+  for (let i = combined.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [combined[i], combined[j]] = [combined[j], combined[i]];
+  }
+  return combined;
+}
+
+// Update score screen total dynamically for glob
+function showScore(id) {
+  const s = state[id];
+  const container = document.getElementById('qc-' + id);
+  const screen = document.getElementById('ss-' + id);
+  if (container) container.style.display = 'none';
+  if (screen) screen.style.display = 'block';
+  const numEl = document.getElementById('sn-' + id);
+  const totEl = document.getElementById('sd-' + id);
+  const msgEl = document.getElementById('sm-' + id);
+  if (numEl) numEl.textContent = s.score;
+  if (totEl) totEl.textContent = '/' + s.questions.length;
+  const pct = Math.round(s.score / s.questions.length * 100);
+  const msgs = [
+    [0, 39, "Reprenez la lecture — l'histoire vous attend !"],
+    [40, 59, "Quelques lacunes à combler, mais vous progressez !"],
+    [60, 74, "Bonne maîtrise de l'histoire polonaise."],
+    [75, 89, "Très bien ! Vous connaissez cette histoire en profondeur."],
+    [90, 100, "Excellent ! Une connaissance digne d'un historien."]
+  ];
+  const m = msgs.find(x => pct >= x[0] && pct <= x[1]);
+  if (msgEl && m) msgEl.textContent = m[2];
+  const fill = document.getElementById('pf-' + id);
+  if (fill) fill.style.width = '100%';
+}
+
+// ═══════════════════ INIT ═══════════════════
+
+Object.keys(QUIZZES).forEach(id => {
+  initQuiz(id, QUIZZES[id].questions);
+});
+const _gq = buildGlobalQuestions();
+initQuiz('glob', _gq);
+const countEl = document.getElementById('glob-count');
+if (countEl) countEl.textContent = _gq.length + ' questions — toutes les périodes, ordre aléatoire';
+
+// ═══════════════════ SCROLL NAV ═══════════════════
+
+const nav = document.getElementById('global-nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) nav.classList.add('visible');
+  else nav.classList.remove('visible');
+});
+
+// ═══════════════════ REVEAL ═══════════════════
+
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+</script>
+</body>
+</html>
